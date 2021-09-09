@@ -187,10 +187,10 @@ const Approch = () => {
               The static websites I build are hosted on a global CDN that don’t require complex
               scaling operations or expensive plans. They scale when needed, but when traffic drops
               so does your usage — and your costs. Host your website for less (cheaper than Wix,
-              WordPress and Squarespace) and uses less energy. If you plan to administer your
-              website on your own, and you have low traffic, you could be hosting for free. It's a
-              smarter choice for the concious whom are considering responsible hosting with lower
-              costs and carbon footprint!
+              WordPress and Squarespace) and use less energy. If you plan to administer your website
+              on your own, and you have low traffic, you could be hosting for free. It's a smarter
+              choice for the concious whom are considering responsible hosting with lower costs and
+              carbon footprint!
             </p>
           </span>
         </div>
