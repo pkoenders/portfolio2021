@@ -148,8 +148,8 @@ const Approch = () => {
               this website is built with <a href="https://prismic.io/">Prismic CMS</a>. Prismic It
               is cost effective and has a great user onboarding and experience for content creators,
               designers and developers. Prismic empowers content creaters to build and publish
-              websites without constraints. Create a scheduale for releases, preview and share your
-              content changes.
+              websites without constraints in locales of your choice. Create a scheduale for
+              releases, preview and share your content changes.
             </p>
             <p>
               Don't let your website design and content be funneled into restrictive and
