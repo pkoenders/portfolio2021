@@ -25,7 +25,7 @@ const ApproachSection = styled.section`
       flex-direction: row;
       align-items: flex-start;
       grid-gap: ${({ theme }) => theme.padding['1/2']};
-      i {
+      > i {
         font-size: 40px;
         /* background-image: radial-gradient(
           circle,
@@ -56,6 +56,12 @@ const ApproachSection = styled.section`
         ul,
         li {
           text-align: left;
+        }
+        span {
+          margin-top: ${({ theme }) => theme.padding['1/2']};
+          a {
+            margin: 0 auto 0 0;
+          }
         }
       }
     }
@@ -160,7 +166,7 @@ const Approch = () => {
               buttonLabel={'Demonstration template'}
               buttonType={'Static'}
               buttonLink={'/prismic-template'}
-              buttonStyle={'accent'}
+              buttonStyle={'primary'}
               // buttonIcon={'article'}
               // buttonIconAlign={'right'}
             />
@@ -204,6 +210,14 @@ const Approch = () => {
               customised. You will get personal support and I will answer your calls because I just
               simply ❤️ what I do.
             </p>
+            <Button
+              buttonLabel={'Reach out'}
+              buttonType={'Static'}
+              buttonLink={'/contact'}
+              buttonStyle={'primary'}
+              buttonIcon={'send'}
+              buttonIconAlign={'right'}
+            />
           </span>
         </div>
       </div>
