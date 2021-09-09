@@ -16,7 +16,15 @@ const IntroSection = styled.section`
   padding: ${({ theme }) => theme.padding['4xl']} 0;
   display: flex;
   flex-direction: column;
+  grid-gap: ${({ theme }) => theme.padding['2xl']};
   z-index: 999;
+
+  .title {
+    display: flex;
+    margin: auto;
+    font-size: 125%;
+    color: ${({ theme }) => theme.colors.page[100]};
+  }
 
   .intro {
     padding: 0;
@@ -126,12 +134,14 @@ const IntroSection = styled.section`
     width: 100%;
     font-size: 110%;
     display: flex;
-    margin-top: ${({ theme }) => theme.margin.default};
-    a {
-      padding: ${({ theme }) => theme.padding['1/2']} ${({ theme }) => theme.padding.default};
-      border: 1px solid ${({ theme }) => theme.colors.tertiary[400]} !important;
-      i {
-        color: ${({ theme }) => theme.colors.tertiary[600]} !important;
+    span {
+      margin-top: 0;
+      a {
+        padding: ${({ theme }) => theme.padding['1/2']} ${({ theme }) => theme.padding.default};
+        border: 1px solid ${({ theme }) => theme.colors.tertiary[400]} !important;
+        i {
+          color: ${({ theme }) => theme.colors.tertiary[600]} !important;
+        }
       }
     }
   }
@@ -191,6 +201,7 @@ const Intro = () => {
 
   return (
     <IntroSection className="sectionIntro section-layout wide">
+      <p className="title">Tēnā koe, welcome to my portfolio.</p>
       <div className="intro">
         <div className="part1">
           <span>
@@ -199,8 +210,8 @@ const Intro = () => {
               follow_the_signs
             </i> */}
             <p>
-              I’m a UI/UX designer &amp; developer originally from a traditional Graphic Design
-              background and transitioned into Digital and Web Design.
+              I’m a UI/UX designer &amp; developer, originally from a traditional Graphic Design
+              background and transitioned into Digital and Web Design
             </p>
           </span>
         </div>
@@ -226,8 +237,8 @@ const Intro = () => {
             </i> */}
             {/* <IconDevelopment /> */}
             <p>
-              With professionalism, integrity and care. I work in a collaborative manner to plan,
-              design and deliver crafted solutions.
+              With professionalism, integrity, and care. I work in a collaborative manner to plan,
+              design and deliver crafted solutions
             </p>
           </span>
         </div>

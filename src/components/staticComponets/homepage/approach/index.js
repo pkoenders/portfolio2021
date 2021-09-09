@@ -80,7 +80,7 @@ const Approch = () => {
                 Only 4% of websites
               </a>{' '}
               meet Google's Core Web Vitals. Does your website meet the Core Web Vitals? More
-              importantly, has your website provider talked to you about their stratergy on how they
+              importantly, has your website provider talked to you about their strategy on how they
               plan to meet the Core Web Vitals? As of June 2021, Google will start to consider{' '}
               <a href="https://developers.google.com/search/blog/2020/11/timing-for-page-experience">
                 “Page Experience”
@@ -100,7 +100,7 @@ const Approch = () => {
             <p>Integrations</p>
             <p>
               Sourcing content, transform data, and more. Almost anything you can imagine — from
-              CMSs, spreadsheets, to e-commerce — I can offer a seamless integration of services.
+              CMS's, spreadsheets, to e-commerce — I can offer a seamless integration of services.
             </p>
           </span>
         </div>
@@ -110,8 +110,8 @@ const Approch = () => {
           <span>
             <p>Accessibility</p>
             <p>
-              I support digital accessibility and it is considered into my design and build from the
-              start. It is not a afterthought or something to test for later.{' '}
+              I support digital accessibility, and it is considered into my design and build from
+              the start. It is not an afterthought or something to test for later.{' '}
               <a href="https://www.stats.govt.nz/news/one-in-four-new-zealanders-identified-as-disabled">
                 24% of New Zealanders
               </a>{' '}
@@ -121,7 +121,7 @@ const Approch = () => {
 
             <p>
               The framework I use is recognised by <a href="https://webaim.org/">WebAIM</a> as the
-              most accessible web framework with built in best practices like accessible routing,
+              most accessible web framework with built-in best practices like accessible routing,
               progressive page enhancement and a built-in linting tool to find accessibility errors.
               Help make the web work for everyone.
             </p>
@@ -146,13 +146,13 @@ const Approch = () => {
               I have created a <a href="/prismic-template">demonstration template</a> of what
               Prismic can accomplish with just one single, simple and manageable template. In fact,
               this website is built with <a href="https://prismic.io/">Prismic CMS</a>. Prismic It
-              is cost effective and has a great user onboarding and experience for content creators,
-              designers and developers. Prismic empowers content creaters to build and publish
-              websites without constraints in locales of your choice. Create a scheduale for
+              is cost-effective and has a great user onboarding and experience for content creators,
+              designers and developers. Prismic empowers content creators to build and publish
+              websites without constraints in locales of your choice. Create a schedule for
               releases, preview and share your content changes.
             </p>
             <p>
-              Don't let your website design and content be funneled into restrictive and
+              Don't let your website design and content be funnelled into restrictive and
               uncompromising templates. Build and publish what and when you want to.
             </p>
 
@@ -174,7 +174,7 @@ const Approch = () => {
             <p>
               I use <a href="https://reactjs.org/">React</a> to generate static HTML at build time.
               No server and no reachable database equals no malicious requests, DDOS attacks or
-              accidental exposure. Your website attack surface will be low to nonexistent.
+              accidental exposure. Your website attack surface will be low to non-existent.
             </p>
           </span>
         </div>
@@ -187,7 +187,7 @@ const Approch = () => {
               The static websites I build are hosted on a global CDN that don’t require complex
               scaling operations or expensive plans. They scale when needed, but when traffic drops
               so does your usage — and your costs. Host your website for less (cheaper than Wix,
-              WordPress and SquareSpace) and uses less energy. If you plan to administer your
+              WordPress and Squarespace) and uses less energy. If you plan to administer your
               website on your own, and you have low traffic, you could be hosting for free. It's a
               smarter choice for the concious whom are considering responsible hosting with lower
               costs and carbon footprint!
