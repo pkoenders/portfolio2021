@@ -1,0 +1,82 @@
+// Typography
+$font-size: 100%; /*16px*/
+// Scale
+// 1.076 - Minor second
+// 1.125 - Major second
+// 1.200 - Minor third
+// 1.250 - Major third
+// 1.333 - Perfect fourth
+// 1.414 - Augmented fourth
+// 1.500 - Perfect fith
+// 1.6.18 - Augmented fourth
+$ratio: 1.25;
+
+/* Calculate values */
+// $h6: $font-size * $ratio;
+$h5: $font-size * $ratio;
+$h4: $h5 * $ratio;
+$h3: $h4 * $ratio;
+$h2: $h3 * $ratio;
+$h1: $h2 * $ratio;
+
+$line-height: 1.4;
+
+//Colors
+$whiteText: #eff0f1;
+// $primaryColor: #E41B5B;
+//$primaryColor: salmon;
+$primaryColor: #ca446f;
+$primaryColor: #0d96c0;
+//$primaryColor: #4296c7;
+$primaryColorA: #e098af;
+
+$secondaryColor: #ebd956;
+$secondaryColorA: #f3e896;
+
+$tertiaryColor: #1babe4;
+$tertiaryColorA: #96d8f3;
+
+$tertiaryAltColor: #99dfbe;
+$tertiaryAltColorA: #99dfbe;
+//$tertiaryColorC: #96d9df;
+
+$ctaColorDark: #253240;
+
+//$txtColor: #050505;
+$txtColor: #233044;
+$txtColorLight: #757575;
+
+$pageBgColor: #253240;
+
+$headerFgColor: #788fa8;
+//$headerBgColor: #19181D;
+// $headerBgColor: #253240;
+$headerBgColor: #0c0b0f;
+
+$footerFgColor: #f6f4f2;
+$footerBgColor: #031223;
+
+$altColorA: #3c5168bf;
+
+$globalSectionPadding: 1px 0 96px 0;
+
+$defaultMargin: 32px;
+$defaultPadding: 32px;
+
+$globalBorderRadiusA: 4px;
+$borderRadiusA: 4px;
+$globalBorderRadiusB: 16px;
+
+$globalBoxShadowA: 0px 0px 8px 0px rgba(0, 0, 0, 0.25);
+$boxShadowA: 0px 0px 8px 0px rgba(0, 0, 0, 0.25);
+$globalBoxShadowB: 0px 0px 16px 0px rgba(0, 0, 0, 0.25);
+$boxShadowC: 0px 0px 22px 0px rgba(0, 0, 0, 0.33);
+
+$hoverTransition: all 0.3s cubic-bezier(0.55, 0, 0.1, 1);
+
+$cardsHvrTransN: all 0.15s ease-out;
+
+:export {
+  defaultMargin: $defaultMargin;
+  defaultPadding: $defaultPadding;
+}

@@ -1,0 +1,186 @@
+import React, { useEffect, useState } from 'react'
+
+// Helpers
+import { RichText } from 'prismic-reactjs'
+import linkResolver from '../../../utils/linkResolver'
+import {
+  getContentWidth,
+  getAutoSpacing,
+  getManualSpacing,
+  getBgColor,
+  getColorTint,
+  rgb2hex,
+  getContrast,
+} from '/src/utils/helpers'
+
+// Icons
+// import IconMaterial from '/src/components/common/icons/material'
+
+import styled from 'styled-components'
+
+const QuoteWrapper = styled.section`
+  padding: 0 ${({ theme }) => theme.padding['1/2']};
+
+  .title {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: ${({ theme }) => theme.margin.default};
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    grid-gap: ${({ theme }) => theme.padding.default};
+    li {
+      display: inherit;
+      flex-direction: inherit;
+      grid-gap: ${({ theme }) => theme.padding.default};
+    }
+  }
+
+  &.dark {
+    blockquote:before,
+    blockquote:after {
+      color: ${({ theme }) => theme.colors.grey.default};
+    }
+  }
+`
+
+const BlockQuote = styled.blockquote`
+
+  width: fit-content;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  grid-gap: ${({ theme }) => theme.padding['1/4']};
+  align-items: flex-start;
+  margin: 0 auto 0 0;
+  border-left: 4px solid ${({ theme }) => theme.colors.tertiary.default};
+  padding: ${({ theme }) => theme.padding.default};
+
+  p {
+    font-family: ${({ theme }) => theme.font.serif};
+    font-style: italic;
+    font-size:  100%;
+  }
+
+  span,
+  a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    grid-gap: ${({ theme }) => theme.padding['1/4']};
+    font-family: ${({ theme }) => theme.font.sans};
+    font-style: initial;
+    font-size: initial;
+    text-decoration: none;
+  }
+  span {
+      font-weight: 500;
+  }
+
+ > i {
+    align-self: center;
+    position: absolute;
+    color: ${({ theme }) => theme.colors.page.default};
+    background-color: ${({ theme }) => theme.colors.tertiary.default};
+    font-size: 28px;
+    left:-16px;
+    transform: scaleX(-1);
+    border-radius: 999rem;
+  }
+
+}
+`
+
+const Quotes = ({ slice }) => {
+  // Set up the section with an id and some classes and styles
+  // Add a page ID to reference
+  const sectionID = slice.id
+  // Set the content width class
+  const sectionWidth = getContentWidth(slice.primary.width)
+  // Set default contrast color class
+  const setContrast = 'light'
+
+  // Set the bgColor class
+  var bgColor = getBgColor(slice.primary.background_color)
+  const bGroundTint = getColorTint(slice.primary.background_tint)
+  bgColor = 'background-' + bgColor + '-' + bGroundTint
+  // Set the vertical padding - inline style
+  const defaultPadding = getAutoSpacing(slice.primary.default_padding)
+  var vPaddingTop = getManualSpacing(slice.primary.v_padding_top)
+  var vPaddingBottom = getManualSpacing(slice.primary.v_padding_bottom)
+  if (vPaddingTop === null) {
+    vPaddingTop = defaultPadding + 'px'
+  }
+  if (vPaddingBottom === null) {
+    vPaddingBottom = defaultPadding + 'px'
+  }
+
+  // Set the state of the forGroundColor
+  const [forGroundColor, setForgroundColor] = useState(setContrast)
+  // Find the current bground color of the section and update the forground color class
+  useEffect(() => {
+    var objBground = document.getElementById(`${sectionID}`)
+    let bgColor = window.getComputedStyle(objBground).backgroundColor
+    // Convert it a hex value
+    bgColor = rgb2hex(bgColor)
+    // Return the contrast mode  - 'dark' or 'light'
+    var updateContrast = getContrast(bgColor)
+    // Update contrast color and set it as a class in the section
+    setForgroundColor(updateContrast)
+    // Disable warinings of missing dependencies
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  // Content
+  const title = slice.primary.title
+
+  return (
+    <QuoteWrapper
+      id={sectionID}
+      className={`section-layout ${sectionWidth} ${forGroundColor} ${bgColor}`}
+      style={{
+        paddingTop: vPaddingTop,
+        paddingBottom: vPaddingBottom,
+      }}
+    >
+      <div>
+        {title.text && (
+          <span className="title">
+            <RichText render={title.raw} linkResolver={linkResolver} />
+          </span>
+        )}
+
+        {slice.items.length > 0 && (
+          <ul>
+            {slice.items.map(
+              (node, index) =>
+                slice.items[index].active === true && (
+                  <li key={slice.id + index}>
+                    {slice.items[index].content.raw && (
+                      <>
+                        <BlockQuote>
+                          {/* <IconMaterial icon={'format_quote'} />{' '} */}
+                          <RichText render={slice.items[index].content.raw} />
+                          {slice.items[index].title !== undefined && (
+                            <span>{slice.items[index].title}</span>
+                          )}
+                        </BlockQuote>
+                      </>
+                    )}
+                  </li>
+                )
+            )}
+          </ul>
+        )}
+      </div>
+    </QuoteWrapper>
+  )
+}
+
+export default Quotes

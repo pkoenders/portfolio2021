@@ -1,0 +1,199 @@
+@use 'sass:math';
+@import './scss';
+@import './reset';
+@import './typography';
+@import './checkbox-radios';
+@import './btns';
+
+body {
+  background-color: #ededed;
+  background-color: #ffffff;
+  //background-color: $pageBgColor;
+  color: $txtColor;
+  //background-color: #253240;
+
+  @include respond-below(sm) {
+    //  margin: 50px 0 0 0;
+  }
+}
+
+::selection {
+  background-color: #b3d7fe;
+  color: #837373;
+}
+
+canvas {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0;
+  bottom: 0px;
+  z-index: 0;
+  opacity: 0.33;
+}
+
+// #gatsby-announcer {
+//   color: #ffffff !important;
+// }
+
+/* Rules for sizing the icon. */
+.material-icons.md-18,
+.material-icons-round.md-18 {
+  font-size: 18px;
+}
+
+.material-icons.md-24,
+.material-icons-round.md-24 {
+  font-size: 24px;
+}
+
+.material-icons.md-36,
+.material-icons-round.md-36 {
+  font-size: 36px;
+}
+
+.material-icons.md-48,
+.material-icons-round.md-48 {
+  font-size: 48px;
+}
+
+.section-layout {
+  display: block;
+  //background-color: tomato;
+  padding: $defaultPadding 0;
+
+  > div {
+    max-width: $lg;
+    margin: 0px auto;
+    padding: 0 16px;
+
+    p:last-of-type {
+      margin-bottom: 0px;
+    }
+  }
+}
+
+.section-layout.text {
+  > div {
+    margin: 0 auto;
+    max-width: $md;
+  }
+}
+
+.section-layout.skinny {
+  > div {
+    max-width: $sm;
+    margin: 0 auto;
+  }
+}
+
+.section-layout.slim {
+  > div {
+    max-width: $md;
+    margin: 0 auto;
+  }
+}
+
+.section-layout.wide {
+  > div {
+    max-width: $xl;
+    margin: 0 auto;
+  }
+}
+
+.section-layout.full {
+  > div {
+    max-width: 100%;
+    margin: 0 0;
+  }
+}
+
+.fourOfour {
+  display: flex;
+  align-items: center;
+  margin: 60px auto 0 auto;
+  align-self: center;
+  flex-grow: 1;
+  z-index: 100;
+  padding: math.div($defaultPadding, 1) math.div($defaultPadding, 2);
+  // height: 100vh;
+
+  span {
+    //display: flex;
+    width: fit-content;
+    text-align: center;
+    color: #ffffff;
+
+    h1,
+    p {
+      margin-bottom: math.div($defaultMargin, 2);
+    }
+
+    a,
+    a:link,
+    a:hover {
+      margin-top: math.div($defaultMargin, 1);
+      padding: math.div($defaultPadding, 2) math.div($defaultPadding, 1);
+      color: $txtColor;
+      text-decoration: none;
+    }
+  }
+}
+
+.contactForm.hide,
+.inputFields.hide {
+  display: none;
+}
+
+#SRLLightbox {
+  z-index: 100000;
+  // background-color: $headerBgColor;
+  //opacity: 0.66;
+}
+
+#SRLLightbox {
+  @include respond-below(sm) {
+    //top:50px !important;
+    bottom: 0px !important;
+  }
+
+  .SRLStage {
+    @include respond-below(sm) {
+      //top:50px !important;
+      button.SRLPrevButton,
+      button.SRLNextButton,
+      button.SRLCloseButton,
+      button.SRLZoomOutButton {
+        display: block;
+        height: 42px;
+        width: 42px;
+      }
+    }
+  }
+
+  .SRLElementContainer {
+    z-index: 10;
+  }
+}
+
+.medium-zoom-overlay {
+  z-index: 100000;
+  background: #ffffff;
+}
+
+// .medium-zoom-image {
+//   // border: 1px solid #ffffff !important;
+//   // border-radius: 3px;
+
+//   // overflow: hidden;
+
+//   // transform: none;
+// }
+
+.medium-zoom-image--opened {
+  z-index: 100001;
+  margin: 32px;
+  box-shadow: 0 0 10px 0 #a1a1a19e !important;
+}
