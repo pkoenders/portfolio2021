@@ -49,6 +49,22 @@ const SecondaryNavWrapper = styled.section`
       user-select: none;
       line-height: ${({ theme }) => theme.lineHeight.tight};
 
+      .label {
+        display: flex;
+      }
+      .shortLabel {
+        display: none;
+      }
+      @media (max-width: ${({ theme }) => theme.screens.sm}) {
+        .label {
+          display: none;
+        }
+
+        .shortLabel {
+          display: flex;
+        }
+      }
+
       i {
         pointer-events: none;
         font-size: 24px;
@@ -110,13 +126,15 @@ const SecondaryNav = ({ currentLang, next, nextTitle, previous, previousTitle })
           {previous && previous.lang === currentLang && (
             <Link aria-label={previousTitle} to={linkResolver(previous)}>
               <IconMaterial icon={'chevron_left'} />
-              {previousTitle}
+              <span className="label">{previousTitle}</span>
+              <span className="shortLabel">Previous</span>
             </Link>
           )}
 
           {next && next.lang === currentLang && (
             <Link aria-label={nextTitle} to={linkResolver(next)}>
-              {nextTitle}
+              <span className="label">{nextTitle}</span>
+              <span className="shortLabel">Next</span>
               <IconMaterial icon={'chevron_right'} />
             </Link>
           )}
