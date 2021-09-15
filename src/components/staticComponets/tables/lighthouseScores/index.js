@@ -348,9 +348,10 @@ const LighthouseScores = () => {
             // label: 'Accessiblity',
             //
             data: [`${accessiblityData}`, 100 - `${accessiblityData}`],
-            backgroundColor: [`#F9DA8E`, `rgba(255, 99, 132, 0.0)`],
+            backgroundColor: [`#F9DA8E`, `#EDF2F7`],
             hoverOffset: 4,
             borderWidth: 0,
+            borderRadius: 100,
           },
         ],
       },
@@ -389,9 +390,10 @@ const LighthouseScores = () => {
             // label: 'SEO',
             //
             data: [`${seoData}`, 100 - `${seoData}`],
-            backgroundColor: [`#F9DA8E`, `rgba(255, 99, 132, 0.0)`],
+            backgroundColor: [`#F9DA8E`, `#EDF2F7`],
             hoverOffset: 4,
             borderWidth: 0,
+            borderRadius: 100,
           },
         ],
       },
@@ -428,9 +430,10 @@ const LighthouseScores = () => {
             // label: 'SEO',
             //
             data: [`${performanceData}`, 100 - `${performanceData}`],
-            backgroundColor: [`#F1BA8B`, `rgba(255, 99, 132, 0.0)`],
+            backgroundColor: [`#F1BA8B`, `#EDF2F7`],
             hoverOffset: 4,
             borderWidth: 0,
+            borderRadius: 100,
           },
         ],
       },
@@ -469,10 +472,10 @@ const LighthouseScores = () => {
             data: [`${bestPracticeData}`, 100 - `${bestPracticeData}`],
 
             // backgroundColor: [`#CFE7D6`, `rgba(255, 99, 132, 0.0)`],
-            backgroundColor: [`#F9DA8E`, `rgba(255, 99, 132, 0.0)`],
-
+            backgroundColor: [`#F9DA8E`, `#EDF2F7`],
             hoverOffset: 4,
             borderWidth: 0,
+            borderRadius: 100,
           },
         ],
       },
