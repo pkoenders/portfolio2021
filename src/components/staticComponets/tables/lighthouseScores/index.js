@@ -428,7 +428,7 @@ const LighthouseScores = () => {
             // label: 'SEO',
             //
             data: [`${performanceData}`, 100 - `${performanceData}`],
-            backgroundColor: [`#F9DA8E`, `rgba(255, 99, 132, 0.0)`],
+            backgroundColor: [`#F1BA8B`, `rgba(255, 99, 132, 0.0)`],
             hoverOffset: 4,
             borderWidth: 0,
           },
