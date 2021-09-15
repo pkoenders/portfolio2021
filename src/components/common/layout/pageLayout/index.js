@@ -4,8 +4,12 @@ import styled from 'styled-components'
 const Section = styled.section`
   // Section - For other templates that are not Homepage and General page
   display: block;
-  margin-top: ${({ theme }) => theme.header.height};
+  margin-top: 0;
   padding: ${({ theme }) => theme.padding.default} 0 ${({ theme }) => theme.padding['2xl']};
+
+  &.hasSecondaryNav {
+    margin-top: ${({ theme }) => theme.header.height};
+  }
 
   > div {
     max-width: ${({ theme }) => theme.screens.xl};
@@ -37,9 +41,9 @@ const Section = styled.section`
   }
 `
 
-const PageLayout = ({ children, contentSize }) => {
+const PageLayout = ({ children, classOverides }) => {
   return (
-    <Section className={contentSize}>
+    <Section className={classOverides}>
       <div>{children}</div>
     </Section>
   )

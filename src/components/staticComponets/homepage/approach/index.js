@@ -100,7 +100,7 @@ const Approch = () => {
           </span>
         </div>
 
-        <div>
+        {/* <div>
           <Icon icon={'hub'} />
           <span>
             <p>Integrations</p>
@@ -109,7 +109,7 @@ const Approch = () => {
               CMS's, spreadsheets, to e-commerce — I can offer a seamless integration of services.
             </p>
           </span>
-        </div>
+        </div> */}
 
         <div>
           <Icon icon={'accessibility_new'} />

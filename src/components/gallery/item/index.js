@@ -127,7 +127,7 @@ const GalleryItem = ({ currentLang, itemData }) => {
 
   return (
     // Set content width - xs', 'sm', 'md', 'lg', 'xl', 'xxl', 'full'
-    <Section contentSize={'lg'}>
+    <Section classOverides={'lg hasSecondaryNav'}>
       <div>
         <GalleryHeader>
           <div className="intro">{title && <h1>{title}</h1>}</div>

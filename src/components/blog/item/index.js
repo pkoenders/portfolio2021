@@ -73,7 +73,7 @@ const BlogPost = ({ currentLang, itemData }) => {
 
   return (
     // Set content width - xs', 'sm', 'md', 'lg', 'xl', 'xxl', 'full'
-    <Section contentSize={'sm'}>
+    <Section classOverides={'sm hasSecondaryNav'}>
       <div>
         <Header>
           <div className="intro">{title && <h1>{title}</h1>}</div>

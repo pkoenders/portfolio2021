@@ -315,12 +315,7 @@ const GalleryList = ({ currentLang, pageIntro, dataList }) => {
         </Filter>
       )}
 
-      <Section
-        // style={{
-        //   marginTop: '0px',
-        // }}
-        contentSize={'lg marginTopInital'}
-      >
+      <Section contentSize={'lg marginTopInital'}>
         {/* <PageTitle pageIntro={pageIntro} /> */}
         <ListWrapper>
           <SearchTitle
