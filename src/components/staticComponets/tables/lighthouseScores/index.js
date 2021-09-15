@@ -72,6 +72,7 @@ const LighthouseScoresTable = styled.div`
         i {
           margin: 0 0 0 0;
           width: fit-content;
+          position: relative;
         }
       }
     }
@@ -84,6 +85,9 @@ const LighthouseScoresTable = styled.div`
       /* border-bottom: 1px solid black; */
       border-right: 1px solid ${({ theme }) => theme.colors.card[400]};
       vertical-align: middle;
+      i {
+        line-height: inherit;
+      }
 
       :last-child {
         border-right: 0;
