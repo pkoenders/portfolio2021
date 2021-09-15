@@ -17,6 +17,7 @@
   "dependencies": {
     "@prismicio/client": "^5.1.0",
     "babel-plugin-styled-components": "^1.13.2",
+    "chart.js": "^3.5.1",
     "dateformat": "^4.5.1",
     "final-form": "^4.20.2",
     "gatsby": "^3.9.1",

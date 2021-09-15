@@ -1,5 +1,8 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
+
+import Chart from 'chart.js/auto'
+// import { getRelativePosition } from 'chart.js/helpers'
 
 // Helpers
 import { useTable, useSortBy } from 'react-table'
@@ -11,7 +14,25 @@ import Icon from '/src/components/common/icons/material'
 import Section from '/src/components/common/layout/pageLayout/'
 import styled from 'styled-components'
 
-const LighthouseScoresTable = styled.div`
+const LighthouseScoresWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  grid-gap: ${({ theme }) => theme.padding.default};
+  margin: ${({ theme }) => theme.padding['1/2']} 0 ${({ theme }) => theme.padding.default};
+  canvas {
+    overflow: visible;
+    position: relative;
+    z-index: 10;
+    width: 160px;
+    max-width: 160px;
+    max-height: 160px;
+  }
+`
+
+const LighthouseScoresTableWrapper = styled.div`
   .title {
     padding: ${({ theme }) => theme.padding['1/4']};
     text-align: center;
@@ -221,10 +242,10 @@ const LighthouseScores = () => {
         accessor: 'url', // accessor is the "key" in the data
       },
       {
-        Header: 'Secure',
-        accessor: 'secure', // accessor is the "key" in the data
+        Header: 'Errors',
+        accessor: 'errors',
         Cell: ({ cell: { value } }) =>
-          value === 'TRUE' ? <Icon icon={'done'} /> : <Icon icon={'close'} />,
+          value === 'TRUE' ? <Icon icon={'close'} /> : <Icon icon={'done'} />,
       },
       {
         Header: 'Responsive',
@@ -233,6 +254,14 @@ const LighthouseScores = () => {
           // value === 'TRUE' ? (className) : (className = 'red'),
           value === 'TRUE' ? <Icon icon={'done'} /> : <Icon icon={'close'} />,
       },
+
+      {
+        Header: 'Secure',
+        accessor: 'secure', // accessor is the "key" in the data
+        Cell: ({ cell: { value } }) =>
+          value === 'TRUE' ? <Icon icon={'done'} /> : <Icon icon={'close'} />,
+      },
+
       {
         Header: 'PWA',
         accessor: 'pwa',
@@ -240,12 +269,6 @@ const LighthouseScores = () => {
           value === 'TRUE' ? <Icon icon={'done'} /> : <Icon icon={'close'} />,
       },
 
-      {
-        Header: 'Errors',
-        accessor: 'errors',
-        Cell: ({ cell: { value } }) =>
-          value === 'TRUE' ? <Icon icon={'close'} /> : <Icon icon={'done'} />,
-      },
       {
         Header: 'Accessible',
         accessor: 'accessiblity',
@@ -270,24 +293,233 @@ const LighthouseScores = () => {
 
   var tableData = data.allGoogleSpreadsheetLighthouseScores
 
+  // Set up some average number for charts
+  // const lightHouseArray = []
+  const accessiblityArray = []
+  const seoArray = []
+  const performanceArray = []
+  const bestPracticeArray = []
+
+  tableData.edges
+    .filter((row) => row.node.url !== null)
+    .filter((row) => row.node.url.includes('.'))
+    .filter((row) => row.node.accessiblity !== null)
+    .filter((row) => row.node.seo !== null)
+    .filter((row) => row.node.bestPactice !== null)
+    .forEach((score) => {
+      accessiblityArray.push(score.node.accessiblity)
+      seoArray.push(score.node.seo)
+      performanceArray.push(score.node.performance)
+      bestPracticeArray.push(score.node.bestPractice)
+    })
+
+  // console.log(accessiblityArray)
+  const accessiblityData = getAverageLighthouseScore(accessiblityArray)
+  const seoData = getAverageLighthouseScore(seoArray)
+  const performanceData = getAverageLighthouseScore(performanceArray)
+  const bestPracticeData = getAverageLighthouseScore(bestPracticeArray)
+  // lightHouseArray.push(getAverageLighthouseScore(accessiblityArray))
+  // lightHouseArray.push(getAverageLighthouseScore(seoArray))
+  // lightHouseArray.push(getAverageLighthouseScore(performanceArray))
+  // lightHouseArray.push(getAverageLighthouseScore(bestPracticeArray))
+
+  function getAverageLighthouseScore(scores) {
+    var sum = 0
+    for (var i = 0; i < scores.length; i++) {
+      sum += parseInt(scores[i], 10) //don't forget to add the base
+    }
+    return Math.round(sum / scores.length)
+  }
+
+  // console.log('The accessiblity Data  is: ' + accessiblityData)
+
+  // console.log(`${({ theme }) => theme.colors.alert.l1[300]}`)
+
+  // Chart stuff
+  // Accessibility
+  useEffect(() => {
+    const accessibilityChart = document.getElementById('accessibilityChart')
+    const myAccessibilityChart = new Chart(accessibilityChart, {
+      type: 'doughnut',
+      data: {
+        labels: [`Accessibility ${accessiblityData}%`],
+        datasets: [
+          {
+            // label: 'Accessiblity',
+            //
+            data: [`${accessiblityData}`, 100 - `${accessiblityData}`],
+            backgroundColor: [`#F9DA8E`, `rgba(255, 99, 132, 0.0)`],
+            hoverOffset: 4,
+            borderWidth: 0,
+          },
+        ],
+      },
+
+      options: {
+        hover: { mode: null },
+        responsive: true,
+        cutout: 52,
+        plugins: {
+          tooltip: {
+            enabled: false,
+          },
+          legend: {
+            labels: {
+              boxWidth: 0,
+            },
+          },
+        },
+      },
+    })
+
+    return () => {
+      myAccessibilityChart.destroy()
+    }
+  }, [accessiblityData])
+
+  // SEO
+  useEffect(() => {
+    const seoChart = document.getElementById('seoChart')
+    const mySeoChart = new Chart(seoChart, {
+      type: 'doughnut',
+      data: {
+        labels: [`SEO ${seoData}%`],
+        datasets: [
+          {
+            // label: 'SEO',
+            //
+            data: [`${seoData}`, 100 - `${seoData}`],
+            backgroundColor: [`#F9DA8E`, `rgba(255, 99, 132, 0.0)`],
+            hoverOffset: 4,
+            borderWidth: 0,
+          },
+        ],
+      },
+      options: {
+        responsive: true,
+        hover: { mode: null },
+        cutout: 52,
+        plugins: {
+          tooltip: {
+            enabled: false,
+          },
+          legend: {
+            labels: {
+              boxWidth: 0,
+            },
+          },
+        },
+      },
+    })
+    return () => {
+      mySeoChart.destroy()
+    }
+  }, [seoData])
+
+  // Performance
+  useEffect(() => {
+    const performanceChart = document.getElementById('performmanceChart')
+    const myPerformanceChart = new Chart(performanceChart, {
+      type: 'doughnut',
+      data: {
+        labels: [`Performance ${performanceData}%`],
+        datasets: [
+          {
+            // label: 'SEO',
+            //
+            data: [`${performanceData}`, 100 - `${performanceData}`],
+            backgroundColor: [`#F9DA8E`, `rgba(255, 99, 132, 0.0)`],
+            hoverOffset: 4,
+            borderWidth: 0,
+          },
+        ],
+      },
+      options: {
+        responsive: true,
+        hover: { mode: null },
+        cutout: 52,
+        plugins: {
+          tooltip: {
+            enabled: false,
+          },
+          legend: {
+            labels: {
+              boxWidth: 0,
+            },
+          },
+        },
+      },
+    })
+    return () => {
+      myPerformanceChart.destroy()
+    }
+  }, [performanceData])
+
+  // Best practice
+  useEffect(() => {
+    const bestPracticeChart = document.getElementById('bestPracticeChart')
+    const mybestPracticeChart = new Chart(bestPracticeChart, {
+      type: 'doughnut',
+      data: {
+        labels: [`Best practice ${bestPracticeData}%`],
+        datasets: [
+          {
+            // label: 'SEO',
+            //
+            data: [`${bestPracticeData}`, 100 - `${bestPracticeData}`],
+
+            // backgroundColor: [`#CFE7D6`, `rgba(255, 99, 132, 0.0)`],
+            backgroundColor: [`#F9DA8E`, `rgba(255, 99, 132, 0.0)`],
+
+            hoverOffset: 4,
+            borderWidth: 0,
+          },
+        ],
+      },
+      options: {
+        responsive: true,
+        hover: { mode: null },
+        cutout: 52,
+        plugins: {
+          tooltip: {
+            enabled: false,
+          },
+          legend: {
+            labels: {
+              boxWidth: 0,
+            },
+          },
+        },
+      },
+    })
+    return () => {
+      mybestPracticeChart.destroy()
+    }
+  }, [bestPracticeData])
+
   return (
     <Section
       // contentSize={'xl noMarginTop'}
       classOverides={'xl'}
     >
-      <LighthouseScoresTable>
+      <LighthouseScoresTableWrapper>
         <p className="title">
-          A selection of websites in the Manawatu region and their lighthouse scores.
+          A selection of websites in the Manawatu region and their average lighthouse scores.
         </p>
         {/* <p className="title">Total count: {tableData.totalCount}</p> */}
-
+        <LighthouseScoresWrapper>
+          <canvas id="accessibilityChart" width="auto" height="auto"></canvas>
+          <canvas id="seoChart"></canvas>
+          <canvas id="performmanceChart"></canvas>
+          <canvas id="bestPracticeChart"></canvas>
+        </LighthouseScoresWrapper>
         <div className="tableWrapper">
           <ReactTable
             // data={tableData.edges.map((score) => {
 
             data={tableData.edges
               .filter((row) => row.node.url !== null)
-              .filter((row) => row.node.url.includes('http'))
+              .filter((row) => row.node.url.includes('.'))
               .filter((row) => row.node.accessiblity !== null)
               .filter((row) => row.node.seo !== null)
               .filter((row) => row.node.bestPactice !== null)
@@ -317,7 +549,7 @@ const LighthouseScores = () => {
             })}
           />
         </div>
-      </LighthouseScoresTable>
+      </LighthouseScoresTableWrapper>
     </Section>
   )
 }
