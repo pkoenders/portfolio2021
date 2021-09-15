@@ -137,7 +137,7 @@ module.exports = {
         //
         // When you have generated your credentials, it's easiest to refer to them from an environment variable
         // and parse it directly:
-        // credentials: JSON.parse(GOOGLE_SERVICE_ACCOUNT_CREDENTIALS),
+        // credentials: JSON.parse(GOOGLE_SERVICE_ACCOUNT_CREDENTIALS),,
 
         credentials: {
           type: 'service_account',
