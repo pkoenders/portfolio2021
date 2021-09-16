@@ -14,6 +14,10 @@ const SEOGeneral = ({ slice }) => (
         <Helmet>
           {/* Page Title. Maximum length 60-70 characters */}
           <title>{metaTitle}</title>
+          <meta
+            name="google-site-verification"
+            content="DAiQEMzcJlBMppysBm9TztriuQblYdj_9Rlbi23ddC0"
+          />
 
           {/* Page description. No longer than 155 characters. */}
           {slice.primary.description.text ? (
