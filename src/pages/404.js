@@ -51,7 +51,7 @@ const NotFoundPage = ({ data }) => {
           <Button
             buttonLabel={'Take me home'}
             buttonType={'Static'}
-            staticLink={'/'}
+            buttonLink={'/'}
             buttonStyle={'white'}
           />
         </span>
