@@ -23,11 +23,8 @@ module.exports = {
 
   plugins: [
     `babel-plugin-styled-components`,
-
     `gatsby-plugin-styled-components`,
-
     'gatsby-plugin-sass',
-
     {
       resolve: `gatsby-plugin-webfonts`,
       options: {
@@ -188,7 +185,14 @@ module.exports = {
     },
 
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-robots-txt',
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://pkoenders.netlify.app',
+        sitemap: 'https://pkoenders.netlify.app/sitemap/sitemap-0.xml',
+        policy: [{ userAgent: '*', allow: '/' }],
+      },
+    },
     'gatsby-plugin-sitemap',
 
     {
