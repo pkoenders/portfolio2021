@@ -8,6 +8,7 @@ const SEOIndex = ({ slice }) => {
   return (
     <Helmet>
       <html lang="en-nz" />
+      <meta name="google-site-verification" content="DAiQEMzcJlBMppysBm9TztriuQblYdj_9Rlbi23ddC0" />
       <General />
       <OpenGraph />
       <Twitter />
