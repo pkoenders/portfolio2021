@@ -17,7 +17,7 @@ import IconMaterial from '/src/components/common/icons/material'
 
 import styled from 'styled-components'
 
-const GalleryHeader = styled.div`
+const GalleryHeader = styled.header`
   display: flex;
   position: relative;
 
@@ -52,7 +52,7 @@ const GalleryHeader = styled.div`
   }
 `
 
-const GalleryBody = styled.div`
+const GalleryBody = styled.article`
   display: flex;
   @media (max-width: ${({ theme }) => theme.screens.sm}) {
     flex-direction: column;
@@ -148,7 +148,7 @@ const GalleryItem = ({ currentLang, itemData }) => {
               </div>
             )}
           </div>
-          <div className="gallery">
+          <aside className="gallery">
             {mainImage && (
               <Zoom zoomMargin={32}>
                 <GatsbyImage
@@ -176,7 +176,7 @@ const GalleryItem = ({ currentLang, itemData }) => {
                   />
                 </Zoom>
               ))}
-          </div>
+          </aside>
         </GalleryBody>
       </div>
     </Section>

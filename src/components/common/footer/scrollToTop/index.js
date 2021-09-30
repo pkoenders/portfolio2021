@@ -13,7 +13,7 @@ const Button = styled.button.attrs((props) => ({
   background-color: transparent;
   padding: 0;
   border: none;
-  color: ${({ theme }) => theme.colors.footer.bground.default};
+  color: ${({ theme }) => theme.colors.footer.default};
   display: flex;
 
   i {

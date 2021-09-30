@@ -30,6 +30,7 @@ import {
   getFontSize,
   getLineHeight,
   getZoomLevel,
+  getImgFormat,
 } from '/src/utils/helpers'
 
 import styled from 'styled-components'
@@ -49,7 +50,7 @@ const Highlight = styled.section`
 
   > div {
     display: flex;
-    width: 100%;
+    /* width: 100%; */
     margin: 0 auto;
     padding: 0;
     align-items: center;
@@ -63,17 +64,18 @@ const Highlight = styled.section`
       grid-gap: ${({ theme }) => theme.padding['1/2']};
     }
 
-    .content,
-    .media {
+    .content {
       width: 100%;
       align-items: center;
 
       .textBlock {
+        aspect-ratio: auto;
         padding-left: ${({ theme }) => theme.padding['1/2']};
         padding-right: ${({ theme }) => theme.padding['1/2']};
       }
 
       span.cta {
+        font-size: initial;
         display: flex;
         grid-gap: ${({ theme }) => theme.padding['1/2']};
         width: fit-content;
@@ -88,21 +90,49 @@ const Highlight = styled.section`
       }
     }
 
-    .media,
-    .media.landscape {
-      width: 100%;
+    .media {
+      /* display: contents; */
+      display: flex;
 
-      > div {
-        aspect-ratio: 16/9;
-      }
-      .textBlock {
-        aspect-ratio: auto;
+      .imageWrapper {
+        /* width: 100%; */
+        display: contents;
+        > div {
+          width: 100%;
+        }
       }
     }
 
-    .media.portrait {
+    .imageWrapper.landscape {
+      > div {
+        aspect-ratio: 16/9;
+      }
+    }
+
+    .imageWrapper.portrait {
       > div {
         aspect-ratio: 3/4;
+      }
+    }
+
+    .imageWrapper.square,
+    .imageWrapper.attention {
+      > div {
+        aspect-ratio: 1;
+        margin: 0 ${({ theme }) => theme.padding['1/2']};
+        @media (max-width: ${({ theme }) => theme.screens.sm}) {
+          margin: ${({ theme }) => theme.margin.default} auto 0 auto;
+        }
+      }
+    }
+
+    .imageWrapper.attention {
+      > div {
+        border-radius: 999rem;
+        box-shadow: ${({ theme }) => theme.boxShadow.outlineRight};
+        @media (max-width: ${({ theme }) => theme.screens.sm}) {
+          margin-bottom: ${({ theme }) => theme.margin['1/2']};
+        }
       }
     }
 
@@ -139,10 +169,10 @@ const Highlight = styled.section`
     .content.txt-right,
     .content.txt-center {
       @media (max-width: ${({ theme }) => theme.screens.sm}) {
-        /* text-align: left; */
+        text-align: left;
 
-        .btn {
-          /* margin-left: 0; */
+        span.cta {
+          margin-left: 0;
         }
       }
     }
@@ -250,7 +280,9 @@ const ImageHighlight = ({ slice }) => {
   // Set the bgColor class
   var bgColor = getBgColor(slice.primary.background_color)
   const bGroundTint = getColorTint(slice.primary.background_tint)
-  bgColor = 'background-' + bgColor + '-' + bGroundTint
+  bgColor === 'page'
+    ? (bgColor = 'background-' + bgColor)
+    : (bgColor = 'background-' + bgColor + '-' + bGroundTint)
   // Set the vertical padding - inline style
   const defaultPadding = getAutoSpacing(slice.primary.default_padding)
   var vPaddingTop = getManualSpacing(slice.primary.v_padding_top)
@@ -326,6 +358,7 @@ const ImageHighlight = ({ slice }) => {
         mediaContentObj =
           mediaContent.data.body[0].primary.image.localFile.childImageSharp.gatsbyImageData
         mediaType = 'Image'
+        var imagFormat = getImgFormat(mediaContent.data.body[0].primary.format)
       }
 
       if (mediaType === 'embedded_cloud_media') {
@@ -385,7 +418,7 @@ const ImageHighlight = ({ slice }) => {
 
   useEffect(() => {
     // console.log("animation activated = " + slice.primary.animate_scroll)
-    if (slice.primary.animate_scroll === true) return
+    if (slice.primary.animate_scroll !== true) return
 
     const aninItems = gsap.utils.toArray('.animActive')
     aninItems.forEach((item) => {
@@ -400,7 +433,7 @@ const ImageHighlight = ({ slice }) => {
       })
 
       tl.fromTo(
-        item.querySelector('.media'),
+        item.querySelector('.highlight div'),
         { x: item.classList.contains('media-right') ? 64 : -64 },
         { x: 0, ease: Power3.easeOut }
       )
@@ -420,19 +453,7 @@ const ImageHighlight = ({ slice }) => {
   return (
     <Highlight
       id={sectionID}
-      className={
-        'highlight section-layout ' +
-        sectionWidth +
-        ' ' +
-        'media-' +
-        positionMedia +
-        ' ' +
-        forGroundColor +
-        ' ' +
-        bgColor +
-        ' ' +
-        animItem
-      }
+      className={`highlight section-layout ${sectionWidth} media-${positionMedia} ${forGroundColor} ${bgColor} ${animItem}`}
       style={{
         paddingTop: vPaddingTop,
         paddingBottom: vPaddingBottom,
@@ -440,7 +461,7 @@ const ImageHighlight = ({ slice }) => {
     >
       <div>
         {(content || primaryButtonLabel || secondaryButtonLabel) && (
-          <div
+          <article
             className={'content txt-' + alignContent}
             style={{
               fontSize: fontSize,
@@ -474,20 +495,25 @@ const ImageHighlight = ({ slice }) => {
                 )}
               </span>
             )}
-          </div>
+          </article>
         )}
 
         <div
-          className={'media media-' + positionMedia}
+          className={`media media-${positionMedia}`}
           style={{
             width: mediaSize + '%',
           }}
         >
           {mediaType === 'Image' && (
-            <GatsbyImage
-              image={mediaContentObj}
-              alt={mediaContentObj.alt ? mediaContentObj.alt : 'Placeholder image'}
-            />
+            <div className={`imageWrapper ${imagFormat}`}>
+              <GatsbyImage
+                image={mediaContentObj}
+                alt={mediaContentObj.alt ? mediaContentObj.alt : 'Placeholder image'}
+                // style={{
+                //   width: mediaSize + '%',
+                // }}
+              />
+            </div>
           )}
 
           {/* Done - but test for a11y errors! - To do: Swap this to url and add custom iframe with a title etc for validation - default Youtube breaks! */}

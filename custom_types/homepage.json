@@ -219,7 +219,16 @@
               "background_color": {
                 "type": "Select",
                 "config": {
-                  "options": ["Grey", "Primary", "Secondary", "Tertiary"],
+                  "options": [
+                    "Default",
+                    "Grey",
+                    "Primary",
+                    "Secondary",
+                    "Tertiary",
+                    "Header",
+                    "Footer"
+                  ],
+                  "default_value": "Default",
                   "label": "Background colour",
                   "placeholder": "Please select - (Optional)"
                 }
@@ -227,8 +236,22 @@
               "background_tint": {
                 "type": "Select",
                 "config": {
-                  "options": ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-                  "default_value": "100",
+                  "options": [
+                    "Default",
+                    "100",
+                    "200",
+                    "300",
+                    "400",
+                    "500",
+                    "600",
+                    "700",
+                    "800",
+                    "900",
+                    "1100",
+                    "1200",
+                    "1300"
+                  ],
+                  "default_value": "Default",
                   "label": "Background tint"
                 }
               }
@@ -311,7 +334,16 @@
               "background_color": {
                 "type": "Select",
                 "config": {
-                  "options": ["Grey", "Primary", "Secondary", "Tertiary"],
+                  "options": [
+                    "Default",
+                    "Grey",
+                    "Primary",
+                    "Secondary",
+                    "Tertiary",
+                    "Header",
+                    "Footer"
+                  ],
+                  "default_value": "Default",
                   "label": "Background colour",
                   "placeholder": "Please select - (Optional)"
                 }
@@ -319,8 +351,22 @@
               "background_tint": {
                 "type": "Select",
                 "config": {
-                  "options": ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-                  "default_value": "100",
+                  "options": [
+                    "Default",
+                    "100",
+                    "200",
+                    "300",
+                    "400",
+                    "500",
+                    "600",
+                    "700",
+                    "800",
+                    "900",
+                    "1100",
+                    "1200",
+                    "1300"
+                  ],
+                  "default_value": "Default",
                   "label": "Background tint"
                 }
               }
@@ -445,7 +491,16 @@
               "background_color": {
                 "type": "Select",
                 "config": {
-                  "options": ["Grey", "Primary", "Secondary", "Tertiary"],
+                  "options": [
+                    "Default",
+                    "Grey",
+                    "Primary",
+                    "Secondary",
+                    "Tertiary",
+                    "Header",
+                    "Footer"
+                  ],
+                  "default_value": "Default",
                   "label": "Background colour",
                   "placeholder": "Please select - (Optional)"
                 }
@@ -453,8 +508,22 @@
               "background_tint": {
                 "type": "Select",
                 "config": {
-                  "options": ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-                  "default_value": "100",
+                  "options": [
+                    "Default",
+                    "100",
+                    "200",
+                    "300",
+                    "400",
+                    "500",
+                    "600",
+                    "700",
+                    "800",
+                    "900",
+                    "1100",
+                    "1200",
+                    "1300"
+                  ],
+                  "default_value": "Default",
                   "label": "Background tint"
                 }
               }
@@ -691,7 +760,16 @@
               "background_color": {
                 "type": "Select",
                 "config": {
-                  "options": ["Grey", "Primary", "Secondary", "Tertiary"],
+                  "options": [
+                    "Default",
+                    "Grey",
+                    "Primary",
+                    "Secondary",
+                    "Tertiary",
+                    "Header",
+                    "Footer"
+                  ],
+                  "default_value": "Default",
                   "label": "Background colour",
                   "placeholder": "Please select - (Optional)"
                 }
@@ -699,8 +777,22 @@
               "background_tint": {
                 "type": "Select",
                 "config": {
-                  "options": ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-                  "default_value": "100",
+                  "options": [
+                    "Default",
+                    "100",
+                    "200",
+                    "300",
+                    "400",
+                    "500",
+                    "600",
+                    "700",
+                    "800",
+                    "900",
+                    "1100",
+                    "1200",
+                    "1300"
+                  ],
+                  "default_value": "Default",
                   "label": "Background tint"
                 }
               },
@@ -835,7 +927,16 @@
               "background_color": {
                 "type": "Select",
                 "config": {
-                  "options": ["Grey", "Primary", "Secondary", "Tertiary"],
+                  "options": [
+                    "Default",
+                    "Grey",
+                    "Primary",
+                    "Secondary",
+                    "Tertiary",
+                    "Header",
+                    "Footer"
+                  ],
+                  "default_value": "Default",
                   "label": "Background colour",
                   "placeholder": "Please select - (Optional)"
                 }
@@ -843,8 +944,22 @@
               "background_tint": {
                 "type": "Select",
                 "config": {
-                  "options": ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-                  "default_value": "100",
+                  "options": [
+                    "Default",
+                    "100",
+                    "200",
+                    "300",
+                    "400",
+                    "500",
+                    "600",
+                    "700",
+                    "800",
+                    "900",
+                    "1100",
+                    "1200",
+                    "1300"
+                  ],
+                  "default_value": "Default",
                   "label": "Background tint"
                 }
               }
@@ -1191,7 +1306,16 @@
               "background_color": {
                 "type": "Select",
                 "config": {
-                  "options": ["Grey", "Primary", "Secondary", "Tertiary"],
+                  "options": [
+                    "Default",
+                    "Grey",
+                    "Primary",
+                    "Secondary",
+                    "Tertiary",
+                    "Header",
+                    "Footer"
+                  ],
+                  "default_value": "Default",
                   "label": "Background colour",
                   "placeholder": "Please select - (Optional)"
                 }
@@ -1199,8 +1323,22 @@
               "background_tint": {
                 "type": "Select",
                 "config": {
-                  "options": ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-                  "default_value": "100",
+                  "options": [
+                    "Default",
+                    "100",
+                    "200",
+                    "300",
+                    "400",
+                    "500",
+                    "600",
+                    "700",
+                    "800",
+                    "900",
+                    "1100",
+                    "1200",
+                    "1300"
+                  ],
+                  "default_value": "Default",
                   "label": "Background tint"
                 }
               }

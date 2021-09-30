@@ -305,6 +305,7 @@ export function getBgColor(color) {
   switch (color) {
     case null:
     case undefined:
+    case 'Default':
       return 'page'
 
     case 'Primary':
@@ -322,6 +323,12 @@ export function getBgColor(color) {
     case 'Grey':
       return 'grey'
 
+    case 'Header':
+      return 'header'
+
+    case 'Footer':
+      return 'footer'
+
     default:
       return 'page'
   }
@@ -332,7 +339,10 @@ export function getColorTint(tint) {
   switch (tint) {
     case null:
     case undefined:
-      return '100'
+      return 'default'
+
+    case 'Default':
+      return 'default'
 
     default:
       return tint
@@ -459,7 +469,10 @@ export function getOpacity(value) {
     case null:
       return parseFloat(0.33)
 
-    case value:
+    case 100:
+      return '1'
+
+    case value <= 99:
       return parseFloat('0.' + value)
 
     default:
@@ -518,6 +531,12 @@ export function getImgFormat(format) {
 
     case 'Portrait':
       return 'portrait'
+
+    case 'Square':
+      return 'square'
+
+    case 'Attention':
+      return 'attention'
 
     default:
       return 'landscape'

@@ -175,13 +175,6 @@ const FormWraper = styled.div`
       }
     }
 
-    div.richText {
-      p {
-        text-indent: 0;
-        margin-left: ${({ theme }) => theme.margin['1/4']};
-      }
-    }
-
     div.richText.above {
       padding-top: ${({ theme }) => theme.padding['1/4']};
       margin-top: -${({ theme }) => theme.margin.default};
@@ -269,7 +262,7 @@ const FormWraper = styled.div`
       grid-gap: ${({ theme }) => theme.padding['1/2']};
       margin-top: -${({ theme }) => theme.margin['1/2']};
       padding-top: ${({ theme }) => theme.padding['1/2']};
-      border-top: 1px solid ${({ theme }) => theme.colors.grey[200]};
+      /* border-top: 1px solid ${({ theme }) => theme.colors.grey[200]}; */
       .requiredCheck {
         text-indent: 0;
         margin: 0;

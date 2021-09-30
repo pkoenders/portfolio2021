@@ -24,8 +24,8 @@ const HeaderWrapper = styled.header`
     left: 0px;
     right: 0px;
     display: flex;
-    height: ${({ theme }) => theme.header.height};
-    background-color: ${({ theme }) => theme.colors.header.bground[50]};
+    height: 60px;
+    background-color: ${({ theme }) => theme.colors.header[50]};
     z-index: 10000;
 
     .skipLink {
@@ -37,7 +37,7 @@ const HeaderWrapper = styled.header`
       text-transform: uppercase;
       padding: ${({ theme }) => theme.padding['1/4']} ${({ theme }) => theme.padding.default};
 
-      color: ${({ theme }) => theme.colors.header.bground[800]};
+      color: ${({ theme }) => theme.colors.header[800]};
       background-color: ${({ theme }) => theme.colors.page[100]};
 
       border-radius: ${({ theme }) => theme.borderRadius.sm};
@@ -103,14 +103,14 @@ const HeaderWrapper = styled.header`
       }
 
       svg {
-        /* height: ${({ theme }) => theme.padding['1/2']}; */
-        height: 24px;
+        height: 28px;
         width: auto;
       }
     }
 
     a.brand {
       @media (max-width: ${({ theme }) => theme.screens.sm}) {
+        /* right: 64px; */
         right: ${({ theme }) => theme.padding['1/2']};
         left: auto;
       }
@@ -164,12 +164,13 @@ const HeaderWrapper = styled.header`
         button {
           font-size: 120%;
           font-weight: 400;
-          color: ${({ theme }) => theme.colors.header.default};
+          color: ${({ theme }) => theme.colors.header.text.default};
           background-color: transparent;
           border: none;
           padding: ${({ theme }) => theme.padding['1/2']};
           position: relative;
           text-align: left;
+          text-decoration: none;
           display: inline-flex;
           align-items: center;
           cursor: pointer;
@@ -189,13 +190,13 @@ const HeaderWrapper = styled.header`
         a:hover,
         button:hover {
           text-decoration: none !important;
-          color: ${({ theme }) => theme.colors.header.default};
+          color: ${({ theme }) => theme.colors.header.text.default};
         }
 
         a.activeNavItem,
         button.activeNavItem {
-          border-left: 5px solid ${({ theme }) => theme.colors.header.default};
-          color: ${({ theme }) => theme.colors.header.default};
+          border-left: 5px solid ${({ theme }) => theme.colors.header.text.default};
+          color: ${({ theme }) => theme.colors.header.text.default};
           font-weight: 600;
           margin-left: -5px;
         }
@@ -206,7 +207,7 @@ const HeaderWrapper = styled.header`
           bottom: 0px;
           display: flex;
           border-radius: 1.5px;
-          background-color: ${({ theme }) => theme.colors.header.default};
+          background-color: ${({ theme }) => theme.colors.header.text.default};
           height: 1px;
           width: 0;
           left: -3px;
@@ -265,7 +266,7 @@ const HeaderWrapper = styled.header`
     height: 100vh;
     max-width: 100%;
     border: none;
-    background: ${({ theme }) => theme.colors.header.bground.default};
+    background: ${({ theme }) => theme.colors.header.default};
 
     ul {
       display: block;
@@ -293,21 +294,66 @@ const HeaderWrapper = styled.header`
         justify-self: center;
         align-items: stretch;
         padding: 0px ${({ theme }) => theme.padding['3xl']};
+        /* margin: 0 auto 0 ${({ theme }) => theme.margin.default}; */
         margin: 0 auto;
         top: 0px;
         position: relative;
         width: auto;
         overflow-x: visible;
+        max-width: ${({ theme }) => theme.screens.md};
 
         li {
           display: flex;
           align-items: center;
+          line-height: initial;
+          /* height: ${({ theme }) => theme.header.height}; */
+
+          a,
+          button {
+            font-size: 95%;
+            text-align: center;
+            line-height: initial;
+            height: ${({ theme }) => theme.header.height};
+          }
+
+          a.activeNavItem,
+          button.activeNavItem {
+            border: none;
+            margin: 0;
+            font-weight: initial;
+          }
+
+          a:after,
+          button:after {
+            content: '';
+            position: absolute;
+            top: 0px;
+            visibility: hidden;
+            /* background-color: ${({ theme }) => theme.colors.page.bground.default}; */
+            background-color: ${({ theme }) => theme.colors.card[200]};
+            height: ${({ theme }) => theme.margin['1/8']};
+            border-radius: 0;
+            transform: scaleX(0);
+            transition: all 150ms ease-in-out;
+          }
+
+          a:hover:after,
+          button:hover:after,
+          a.activeNavItem:after,
+          button.activeNavItem:after {
+            left: 2px;
+            right: 2px;
+            width: auto;
+            visibility: visible;
+            transform: scaleX(1);
+          }
 
           button.secondaryNavBtn {
             display: flex;
             align-items: center;
             font-weight: normal;
             position: relative;
+            border-left: none;
             z-index: 2000;
             i {
               margin-left: ${({ theme }) => theme.margin['1/4']};
@@ -317,9 +363,11 @@ const HeaderWrapper = styled.header`
           }
 
           button.secondaryNavBtn.isActive {
-            background-color: ${({ theme }) => theme.colors.header.bground[700]};
+            background-color: ${({ theme }) => theme.colors.header[800]};
+            /* background-color: ${({ theme }) => theme.colors.primary[1100]}; */
             i {
               transform: rotate(180deg);
+              /* color: ${({ theme }) => theme.colors.header.default}; */
             }
           }
           button.secondaryNavBtn.isActive:after {
@@ -333,16 +381,18 @@ const HeaderWrapper = styled.header`
             margin: 0;
             padding: ${({ theme }) => theme.padding['1/2']} 0;
             top: ${({ theme }) => theme.header.height};
-            background-color: ${({ theme }) => theme.colors.header.bground[700]};
+            background-color: ${({ theme }) => theme.colors.header[800]};
+            /* background-color: ${({ theme }) => theme.colors.primary[1100]}; */
             border-radius: 0 0 ${({ theme }) => theme.borderRadius.default}
               ${({ theme }) => theme.borderRadius.default};
             box-shadow: ${({ theme }) => theme.boxShadow.lg} !important;
 
             li {
               padding: ${({ theme }) => theme.padding['1/8']} ${({ theme }) => theme.padding['1/2']};
+
               a {
                 white-space: nowrap;
-                padding: ${({ theme }) => theme.padding['1/8']}
+                padding: ${({ theme }) => theme.padding['1/4']}
                   ${({ theme }) => theme.padding['1/2']};
                 border-radius: ${({ theme }) => theme.borderRadius.sm};
                 display: flex;
@@ -357,6 +407,7 @@ const HeaderWrapper = styled.header`
               a:hover,
               a.activeNavItem {
                 background-color: ${({ theme }) => theme.colors.primary.default};
+                /* background-color: ${({ theme }) => theme.colors.header.default}; */
                 border: none;
                 i {
                   display: none;
@@ -373,65 +424,37 @@ const HeaderWrapper = styled.header`
             display: flex;
           }
 
-          a,
-          p,
-          span,
-          button {
-            font-size: 95%;
-            line-height: 190%;
-            font-weight: 400;
-            color: ${({ theme }) => theme.colors.header.default};
-            margin: 0;
-            padding-left: ${({ theme }) => theme.padding['1/2']};
-            padding-right: ${({ theme }) => theme.padding['1/2']};
-            position: relative;
-            text-align: center;
-            cursor: pointer;
-            z-index: 10000;
-            height: ${({ theme }) => theme.header.height};
-          }
+          ul.secondaryNavList {
+            a,
+            p,
+            span,
+            button {
+              /* line-height: 190%; */
+              line-height: initial;
+              height: auto;
+              font-weight: 400;
+              color: ${({ theme }) => theme.colors.header.text.default};
+              margin: 0;
+              padding-left: ${({ theme }) => theme.padding['1/2']};
+              padding-right: ${({ theme }) => theme.padding['1/2']};
+              position: relative;
+              text-align: center;
+              cursor: pointer;
+              z-index: 10000;
+            }
 
-          a:hover,
-          button:hover {
-            color: ${({ theme }) => theme.colors.header.default};
-          }
+            a:hover,
+            button:hover {
+              color: ${({ theme }) => theme.colors.header.text.default};
+            }
 
-          a.activeNavItem,
-          button.activeNavItem {
-            border-left: none;
-            font-weight: normal;
-            margin: inherit;
-            color: ${({ theme }) => theme.colors.header.default};
-          }
-
-          a:after,
-          button:after {
-            content: '';
-            position: absolute;
-            top: 0px;
-            visibility: hidden;
-            background-color: ${({ theme }) => theme.colors.accent.default};
-            background-color: #fff;
-            /* background: rgb(228, 27, 91);
-            background: linear-gradient(90deg, rgba(228, 27, 91, 1) 25%, rgba(10, 3, 31, 1) 100%); */
-
-            height: ${({ theme }) => theme.margin['1/8']};
-            /* margin: 0 2px; */
-            border-radius: 0;
-
-            transform: scaleX(0);
-            transition: all 150ms ease-in-out;
-          }
-
-          a:hover:after,
-          button:hover:after,
-          a.activeNavItem:after,
-          button.activeNavItem:after {
-            left: 2px;
-            right: 2px;
-            width: auto;
-            visibility: visible;
-            transform: scaleX(1);
+            a.activeNavItem,
+            button.activeNavItem {
+              border-left: none;
+              font-weight: normal;
+              margin: inherit;
+              color: ${({ theme }) => theme.colors.header.text.default};
+            }
           }
         }
 
@@ -445,7 +468,7 @@ const HeaderWrapper = styled.header`
   // Desktop header
   &::before {
     content: '';
-    background-color: ${({ theme }) => theme.colors.header.bground.default};
+    background-color: ${({ theme }) => theme.colors.header.default};
     opacity: 0;
     position: absolute;
     top: 0;
@@ -459,13 +482,13 @@ const HeaderWrapper = styled.header`
 
   &.fillBground {
     transition: all 0.75s;
-    background-color: ${({ theme }) => theme.colors.header.bground.default};
+    background-color: ${({ theme }) => theme.colors.header.default};
   }
 
   &.fillBground::before,
   &.fillBgroundQuick::before {
     content: '';
-    background-color: ${({ theme }) => theme.colors.header.bground.default};
+    background-color: ${({ theme }) => theme.colors.header.default};
     opacity: 1;
     position: absolute;
     top: 0;
@@ -510,7 +533,6 @@ const Header = ({ currentLang, currentPrefix, currentPath, primaryNav }) => {
   }
 
   function handleCloseSecondaryNav(menuItem) {
-    // console.log('click!')
     var secondaryNavBtn = document.querySelectorAll('.secondaryNavBtn')
     var secondaryNavList = document.querySelectorAll('.secondaryNavList')
     if (window.innerWidth > 768) {
@@ -528,8 +550,6 @@ const Header = ({ currentLang, currentPrefix, currentPath, primaryNav }) => {
     if (typeof window !== 'undefined') {
       pathName = window.location.pathname
     }
-
-    // Handle navigation functionality
 
     const skipLink = document.querySelector('.skipLink')
     const headerNavWrapper = document.querySelector('.headerNavWrapper')
@@ -551,7 +571,6 @@ const Header = ({ currentLang, currentPrefix, currentPath, primaryNav }) => {
     })
 
     var prevScrollpos = window.pageYOffset
-
     //
     // Toggle mobile menu
     toggleHamburger.addEventListener('click', function () {
@@ -571,7 +590,6 @@ const Header = ({ currentLang, currentPrefix, currentPath, primaryNav }) => {
     })
 
     function openHamburgerNav() {
-      //console.log('open')
       headerNav.classList.add('open', 'fillBground')
       toggleHamburger.classList.add('is-active')
       toggleHamburger.setAttribute('aria-expanded', 'true')
@@ -580,8 +598,6 @@ const Header = ({ currentLang, currentPrefix, currentPath, primaryNav }) => {
     }
 
     function closeHamburgerNav() {
-      //console.log('close')
-
       var secondaryNavBtn = document.querySelectorAll('.secondaryNavBtn')
       var secondaryNavList = document.querySelectorAll('.secondaryNavList')
       for (var i = 0; i < secondaryNavBtn.length; ++i) {
@@ -599,7 +615,6 @@ const Header = ({ currentLang, currentPrefix, currentPath, primaryNav }) => {
     //
     // Handle slide/scroll effect of menu
     document.addEventListener('scroll', function () {
-      // console.log('scroll')
       var currentScrollPos = window.pageYOffset
       if (prevScrollpos >= currentScrollPos) {
         headerNavWrapper.classList.remove('slide')
@@ -665,7 +680,7 @@ const Header = ({ currentLang, currentPrefix, currentPath, primaryNav }) => {
           <Brand alt={'Logo - Link to homepage'} />
         </Link>
 
-        <ul>
+        <ul aria-label="Secondary navigation">
           {primaryNav.map((navItem, index) => {
             //console.log(navItem.link)
             return (
@@ -697,7 +712,7 @@ const Header = ({ currentLang, currentPrefix, currentPath, primaryNav }) => {
 
                 {navItem.items.length > 0 ? (
                   <>
-                    <ul className="secondaryNavList">
+                    <ul className="secondaryNavList" aria-label="Secondary navigation">
                       {navItem.items.map((subNavItem, index) => {
                         return (
                           <li key={`sub-nav-${index}`}>

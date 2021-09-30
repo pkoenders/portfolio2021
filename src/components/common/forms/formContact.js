@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 
 // Helpers
 import { isRequired, isValidEmail } from './validators'
@@ -9,6 +9,8 @@ import {
   getContentWidth,
   getBgColor,
   getColorTint,
+  rgb2hex,
+  getContrast,
   validateString,
   getAutoSpacing,
   getManualSpacing,
@@ -38,6 +40,9 @@ const encode = (data) => {
 }
 
 const ContactNew = ({ formData, slice }) => {
+  // Set default contrast color class
+  const setContrast = 'light'
+
   // If form is a slice from a page, set up the layout
   if (formData === undefined) {
     // Set up the section with an id and some classes and styles
@@ -60,6 +65,24 @@ const ContactNew = ({ formData, slice }) => {
       vPaddingBottom = defaultPadding + 'px'
     }
   }
+
+  // Set the state of the forGroundColor
+  const [forGroundColor, setForgroundColor] = useState(setContrast)
+  // Find the current bground color of the section and update the forground color class
+  useEffect(() => {
+    if (formData === undefined) {
+      var objBground = document.getElementById(`${sectionID}`)
+      let bgColor = window.getComputedStyle(objBground).backgroundColor
+      // Convert it a hex value
+      bgColor = rgb2hex(bgColor)
+      // Return the contrast mode  - 'dark' or 'light'
+      var updateContrast = getContrast(bgColor)
+      // Update contrast color and set it as a class in the section
+      setForgroundColor(updateContrast)
+      // Disable warinings of missing dependencies
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }
+  }, [formData, sectionID])
 
   const [requiredFieldSet, setRequiredFieldSet] = useState(true)
   const [errorMessage, setErrorMsg] = useState(false)
@@ -112,7 +135,7 @@ const ContactNew = ({ formData, slice }) => {
         if (res) {
           setSuccessMsg(true)
 
-          console.log('form submit')
+          // console.log('form submit')
           document.querySelector('form').classList.add('hide')
         }
       })
@@ -175,8 +198,9 @@ const ContactNew = ({ formData, slice }) => {
   return (
     // Set up ID and styles if from is from a slice
     <section
-      id={formData === undefined && sectionID}
-      className={formData === undefined && `section-layout form ${sectionWidth} ${bgColor}`}
+      // id={formData === undefined && sectionID}
+      id={sectionID}
+      className={`section-layout form ${sectionWidth} ${forGroundColor} ${bgColor}`}
       style={{
         paddingTop: vPaddingTop,
         paddingBottom: vPaddingBottom,
@@ -192,6 +216,7 @@ const ContactNew = ({ formData, slice }) => {
         <Form onSubmit={onSubmit}>
           {({ values, invalid }) => (
             <form
+              id="form"
               className="form"
               name={formName}
               // noValidate

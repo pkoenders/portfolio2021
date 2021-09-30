@@ -15,9 +15,9 @@ const SecondaryNavWrapper = styled.section`
   left: 0px;
   right: 0px;
   padding: 0;
-  color: ${({ theme }) => theme.colors.header.default};
-  background-color: ${({ theme }) => theme.colors.header.bground.default};
-  border-bottom: ${({ theme }) => theme.colors.header.bground[200]};
+  color: ${({ theme }) => theme.colors.header.text.default};
+  background-color: ${({ theme }) => theme.colors.header.default};
+  border-bottom: ${({ theme }) => theme.colors.header[200]};
   box-shadow: ${({ theme }) => theme.boxShadow.default};
   will-change: transform;
   transition: ${({ theme }) => theme.transition.easeOut.lazy};
@@ -42,9 +42,10 @@ const SecondaryNavWrapper = styled.section`
       width: fit-content;
       border: none;
       outline: none;
-      color: ${({ theme }) => theme.colors.header.default};
+      color: ${({ theme }) => theme.colors.header.text.default};
       background-color: transparent;
       text-align: left;
+      text-decoration: none;
       cursor: pointer;
       user-select: none;
       line-height: ${({ theme }) => theme.lineHeight.tight};

@@ -12,6 +12,7 @@ const MapWrapper = styled.div`
   width: 100%;
   height: 100%;
   border: 1px solid #bebebe;
+  aspect-ratio: 16/9;
 
   .pin {
     display: inline-flex;

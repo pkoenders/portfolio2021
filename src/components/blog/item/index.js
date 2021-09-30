@@ -9,7 +9,7 @@ import SliceZone from '/src/components/slices/sliceZone'
 
 import styled from 'styled-components'
 
-const Header = styled.div`
+const Header = styled.header`
   /* max-width: ${({ theme }) => theme.screens.sm};
   padding: 0 ${({ theme }) => theme.margin['1/2']}; */
   display: flex;
@@ -45,7 +45,7 @@ const Header = styled.div`
   }
 `
 
-const Body = styled.div`
+const Body = styled.article`
   margin: 0 auto;
   display: flex;
   flex-direction: column;

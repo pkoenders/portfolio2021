@@ -203,63 +203,65 @@ const Intro = () => {
   return (
     <IntroSection className="sectionIntro section-layout wide">
       <p className="title">Tēnā koe, welcome to my portfolio.</p>
-      <div className="intro">
-        <div className="part1">
-          <span>
-            <Icon icon={'follow_the_signs'} ref={iconRef} />
-            {/* <i className="material-icons-round" aria-hidden="true" ref={iconRef}>
+      <div>
+        <article className="intro">
+          <div className="part1">
+            <span>
+              <Icon icon={'follow_the_signs'} ref={iconRef} />
+              {/* <i className="material-icons-round" aria-hidden="true" ref={iconRef}>
               follow_the_signs
             </i> */}
-            <p>
-              I’m a UI/UX designer &amp; developer, originally from a traditional Graphic Design
-              background and transitioned into Digital and Web Design
-            </p>
-          </span>
-        </div>
+              <p>
+                I’m a UI/UX designer &amp; developer, originally from a traditional Graphic Design
+                background and transitioned into Digital and Web Design
+              </p>
+            </span>
+          </div>
 
-        <div className="part2">
-          <span>
-            <Icon icon={'accessibility_new'} ref={iconRef} />
-            {/* <i className="material-icons-round" aria-hidden="true" ref={iconRef}>
+          <div className="part2">
+            <span>
+              <Icon icon={'accessibility_new'} ref={iconRef} />
+              {/* <i className="material-icons-round" aria-hidden="true" ref={iconRef}>
               accessibility_new
             </i> */}
-            <p>
-              I support digital accessibility, am curious and enjoy working with creative and
-              integration teams delivering digital solutions.
-            </p>
-          </span>
-        </div>
+              <p>
+                I support digital accessibility, am curious and enjoy working with creative and
+                integration teams delivering digital solutions.
+              </p>
+            </span>
+          </div>
 
-        <div className="part3">
-          <span>
-            <Icon icon={'favorite_border'} ref={iconRef} />
-            {/* <i className="material-icons-round" aria-hidden="true" ref={iconRef}>
+          <div className="part3">
+            <span>
+              <Icon icon={'favorite_border'} ref={iconRef} />
+              {/* <i className="material-icons-round" aria-hidden="true" ref={iconRef}>
               favorite_border
             </i> */}
-            {/* <IconDevelopment /> */}
-            <p>
-              With professionalism, integrity, and care. I work in a collaborative manner to plan,
-              design and deliver crafted solutions
-            </p>
-          </span>
-        </div>
+              {/* <IconDevelopment /> */}
+              <p>
+                With professionalism, integrity, and care. I work in a collaborative manner to plan,
+                design and deliver crafted solutions
+              </p>
+            </span>
+          </div>
 
-        <div className="part4">
-          <span>
-            <Icon icon={'design_services'} ref={iconRef} />
-            {/* <i className="material-icons-round" aria-hidden="true" ref={iconRef}>
+          <div className="part4">
+            <span>
+              <Icon icon={'design_services'} ref={iconRef} />
+              {/* <i className="material-icons-round" aria-hidden="true" ref={iconRef}>
               design_services
             </i> */}
-            <ul>
-              <li>Implementation of the UI/UX design process</li>
-              {/* <li>Estimating &amp; proposal review</li> */}
-              <li>Iterative wire-framing &amp; prototypes</li>
-              {/* <li>Build &amp; maintain design systems</li> */}
-              <li>HTML components, React &amp; Headless CMS's</li>
-              {/* <li>Graphic design</li> */}
-            </ul>
-          </span>
-        </div>
+              <ul>
+                <li>Implementation of the UI/UX design process</li>
+                {/* <li>Estimating &amp; proposal review</li> */}
+                <li>Iterative wire-framing &amp; prototypes</li>
+                {/* <li>Build &amp; maintain design systems</li> */}
+                <li>HTML components, React &amp; Headless CMS's</li>
+                {/* <li>Graphic design</li> */}
+              </ul>
+            </span>
+          </div>
+        </article>
       </div>
       <div className="resume">
         <Button

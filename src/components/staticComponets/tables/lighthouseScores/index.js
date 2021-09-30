@@ -38,7 +38,7 @@ const LighthouseScoresTableWrapper = styled.div`
     text-align: center;
   }
   .tableWrapper {
-    border: 1px solid ${({ theme }) => theme.colors.card[500]};
+    border: 1px solid ${({ theme }) => theme.colors.card[300]};
     border-radius: ${({ theme }) => theme.borderRadius.default};
     overflow: hidden;
     max-height: 528px;
@@ -66,7 +66,7 @@ const LighthouseScoresTableWrapper = styled.div`
       left: 0;
       width: 100%;
       /* bottom: -1px; */
-      border-bottom: 1px solid ${({ theme }) => theme.colors.card[500]};
+      border-bottom: 1px solid ${({ theme }) => theme.colors.card[400]};
     }
 
     tr {

@@ -9,7 +9,7 @@ import styled from 'styled-components'
 const FooterWrapper = styled.footer`
   position: relative;
   color: ${({ theme }) => theme.colors.footer.text.default};
-  background-color: ${({ theme }) => theme.colors.footer.bground.default};
+  background-color: ${({ theme }) => theme.colors.footer.default};
   padding: ${({ theme }) => theme.padding['4xl']} 0;
   text-align: center;
   z-index: 1;
@@ -33,7 +33,7 @@ const FooterWrapper = styled.footer`
 
       svg {
         width: auto;
-        height: 32px;
+        height: 24px;
         margin: ${({ theme }) => theme.margin['1/4']} auto;
       }
     }

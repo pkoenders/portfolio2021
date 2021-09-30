@@ -129,7 +129,7 @@ const WrapperHeroImage = styled.section`
             color: inherit;
             width: 100%;
             margin-bottom: 0px;
-            font-size: 104%;
+            font-size: 115%;
 
             a,
             a:hover {
@@ -225,6 +225,7 @@ const FullWidthImage = ({ slice }) => {
 
   return (
     <WrapperHeroImage
+      aria-label="Hero image"
       className={'section-layout heroImage ' + sectionWidth}
       style={{
         marginTop: vMarginTop + 'px',

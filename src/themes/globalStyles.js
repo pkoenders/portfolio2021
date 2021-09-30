@@ -87,7 +87,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   [data-rmiz-overlay='true'] {
-    background-color: ${({ theme }) => theme.colors.header.bground.default} !important;
+    background-color: ${({ theme }) => theme.colors.header.default} !important;
   }
 
   h1 {
@@ -316,10 +316,12 @@ export const GlobalStyles = createGlobalStyle`
     background-color: ${({ theme }) => theme.colors.page.bground.default}; 
   }
    //
-  // Page
-
-  .background-page-100 {
+   // Page
+  .background-page-default {
     background-color: ${({ theme }) => theme.colors.page.bground.default}; 
+  }
+  .background-page-100 {
+    background-color: ${({ theme }) => theme.colors.page[100]}; 
   }
   .background-page-200 {
     background-color: ${({ theme }) => theme.colors.page[200]}; 
@@ -501,6 +503,15 @@ export const GlobalStyles = createGlobalStyle`
   .background-grey-900 {
     background-color: ${({ theme }) => theme.colors.grey[900]}; 
   }
+  .background-grey-1100 {
+    background-color: ${({ theme }) => theme.colors.grey[1100]}; 
+  }
+  .background-grey-1200 {
+    background-color: ${({ theme }) => theme.colors.grey[1200]}; 
+  }
+  .background-grey-1300 {
+    background-color: ${({ theme }) => theme.colors.grey[1300]}; 
+  }
   //
   // Cards 
   .background-card-default{
@@ -535,67 +546,85 @@ export const GlobalStyles = createGlobalStyle`
   }
   //
   // Header 
-  .background-header-bground-default{
-    background-color: ${({ theme }) => theme.colors.header.bground.default}; 
+  .background-header-default{
+    background-color: ${({ theme }) => theme.colors.header.default}; 
   }
-  .background-header-bground-100 {
-    background-color: ${({ theme }) => theme.colors.header.bground[100]}; 
+  .background-header-100 {
+    background-color: ${({ theme }) => theme.colors.header[100]}; 
   }
-  .background-header-bground-200 {
-    background-color: ${({ theme }) => theme.colors.header.bground[200]}; 
+  .background-header-200 {
+    background-color: ${({ theme }) => theme.colors.header[200]}; 
   }
-  .background-header-bground-300 {
-    background-color: ${({ theme }) => theme.colors.header.bground[300]}; 
+  .background-header-300 {
+    background-color: ${({ theme }) => theme.colors.header[300]}; 
   }
-  .background-header-bground-400 {
-    background-color: ${({ theme }) => theme.colors.header.bground[400]}; 
+  .background-header-400 {
+    background-color: ${({ theme }) => theme.colors.header[400]}; 
   }
-  .background-header-bground-500 {
-    background-color: ${({ theme }) => theme.colors.header.bground[500]}; 
+  .background-header-500 {
+    background-color: ${({ theme }) => theme.colors.header[500]}; 
   }
-  .background-header-bground-600 {
-    background-color: ${({ theme }) => theme.colors.header.bground[600]}; 
+  .background-header-600 {
+    background-color: ${({ theme }) => theme.colors.header[600]}; 
   }
-  .background-header-bground-700 {
-    background-color: ${({ theme }) => theme.colors.header.bground[700]}; 
+  .background-header-700 {
+    background-color: ${({ theme }) => theme.colors.header[700]}; 
   }
-  .background-header-bground-800 {
-    background-color: ${({ theme }) => theme.colors.header.bground[800]}; 
+  .background-header-800 {
+    background-color: ${({ theme }) => theme.colors.header[800]}; 
   }
-  .background-header-bground-900 {
-    background-color: ${({ theme }) => theme.colors.header.bground[900]}; 
+  .background-header-900 {
+    background-color: ${({ theme }) => theme.colors.header[900]}; 
+  }
+  .background-header-1100 {
+    background-color: ${({ theme }) => theme.colors.header[1100]}; 
+  }
+  .background-header-1200 {
+    background-color: ${({ theme }) => theme.colors.header[1200]}; 
+  }
+  .background-header-1300 {
+    background-color: ${({ theme }) => theme.colors.header[1300]}; 
   }
    //
   // Footer 
-  .background-footer-bground-default{
-    background-color: ${({ theme }) => theme.colors.footer.bground.default}; 
+  .background-footer-default{
+    background-color: ${({ theme }) => theme.colors.footer.default}; 
   }
-  .background-footer-bground-100 {
-    background-color: ${({ theme }) => theme.colors.footer.bground[100]}; 
+  .background-footer-100 {
+    background-color: ${({ theme }) => theme.colors.footer[100]}; 
   }
-  .background-footer-bground-200 {
-    background-color: ${({ theme }) => theme.colors.footer.bground[200]}; 
+  .background-footer-200 {
+    background-color: ${({ theme }) => theme.colors.footer[200]}; 
   }
-  .background-footer-bground-300 {
-    background-color: ${({ theme }) => theme.colors.footer.bground[300]}; 
+  .background-footer-300 {
+    background-color: ${({ theme }) => theme.colors.footer[300]}; 
   }
-  .background-footer-bground-400 {
-    background-color: ${({ theme }) => theme.colors.footer.bground[400]}; 
+  .background-footer-400 {
+    background-color: ${({ theme }) => theme.colors.footer[400]}; 
   }
-  .background-footer-bground-500 {
-    background-color: ${({ theme }) => theme.colors.footer.bground[500]}; 
+  .background-footer-500 {
+    background-color: ${({ theme }) => theme.colors.footer[500]}; 
   }
-  .background-footer-bground-600 {
-    background-color: ${({ theme }) => theme.colors.footer.bground[600]}; 
+  .background-footer-600 {
+    background-color: ${({ theme }) => theme.colors.footer[600]}; 
   }
-  .background-footer-bground-700 {
-    background-color: ${({ theme }) => theme.colors.footer.bground[700]}; 
+  .background-footer-700 {
+    background-color: ${({ theme }) => theme.colors.footer[700]}; 
   }
-  .background-footer-bground-800 {
-    background-color: ${({ theme }) => theme.colors.footer.bground[800]}; 
+  .background-footer-800 {
+    background-color: ${({ theme }) => theme.colors.footer[800]}; 
   }
-  .background-footer-bground-900 {
-    background-color: ${({ theme }) => theme.colors.footer.bground[900]}; 
+  .background-footer-900 {
+    background-color: ${({ theme }) => theme.colors.footer[900]}; 
+  }
+  .background-footer-1100 {
+    background-color: ${({ theme }) => theme.colors.footer[1100]}; 
+  }
+  .background-footer-1200 {
+    background-color: ${({ theme }) => theme.colors.footer[1200]}; 
+  }
+  .background-footer-1300 {
+    background-color: ${({ theme }) => theme.colors.footer[1300]}; 
   }
   //
   // Alerts 

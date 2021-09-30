@@ -179,7 +179,7 @@ const Text = ({ slice }) => {
     >
       <div>
         {content.text && (
-          <div
+          <article
             className={columnCount}
             style={{
               fontSize: fontSize,
@@ -188,7 +188,7 @@ const Text = ({ slice }) => {
             }}
           >
             {content.text && <RichText render={content.raw} linkResolver={linkResolver} />}
-          </div>
+          </article>
         )}
 
         {(primaryButtonLabel || secondaryButtonLabel) && (
