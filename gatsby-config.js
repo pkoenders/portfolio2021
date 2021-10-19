@@ -202,14 +202,14 @@ module.exports = {
     },
 
     'gatsby-plugin-react-helmet',
-    {
-      resolve: 'gatsby-plugin-robots-txt',
-      options: {
-        host: 'https://pkoenders.netlify.app',
-        sitemap: 'https://pkoenders.netlify.app/sitemap/sitemap-index.xml',
-        policy: [{ userAgent: '*', allow: '/' }],
-      },
-    },
+    // {
+    //   resolve: 'gatsby-plugin-robots-txt',
+    //   options: {
+    //     host: 'https://pkoenders.netlify.app',
+    //     sitemap: 'https://pkoenders.netlify.app/sitemap/sitemap-index.xml',
+    //     policy: [{ userAgent: '*', allow: '/' }],
+    //   },
+    // },
     'gatsby-plugin-sitemap',
 
     {
