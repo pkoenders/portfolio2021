@@ -211,6 +211,21 @@ module.exports = {
     //   },
     // },
     'gatsby-plugin-sitemap',
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://pkoenders.netlify.app',
+        sitemap: 'https://pkoenders.netlify.app/sitemap/sitemap-index.xml',
+        env: {
+          development: {
+            policy: [{ userAgent: '*', disallow: ['/'] }],
+          },
+          production: {
+            policy: [{ userAgent: '*', allow: '/' }],
+          },
+        },
+      },
+    },
 
     {
       resolve: `gatsby-source-filesystem`,
@@ -240,7 +255,7 @@ module.exports = {
       options: {
         name: `Portfolio | Peter Koenders`,
         description: `Portfolio | Peter Koenders`,
-        short_name: `MLMV`,
+        short_name: `Peter Koenders`,
         start_url: `/`,
         background_color: `#091b38`,
         theme_color: `#091b38`,
