@@ -15,6 +15,7 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "@babel/core": "^7.15.8",
     "@prismicio/client": "^5.1.0",
     "babel-plugin-styled-components": "^1.13.2",
     "chart.js": "^3.5.1",
