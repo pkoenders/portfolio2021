@@ -19,7 +19,7 @@ const Button = styled.button.attrs((props) => ({
   i {
     margin-top: ${({ theme }) => theme.margin['1/4']};
     border-radius: 999rem;
-    background-color: ${({ theme }) => theme.colors.footer.default};
+    background-color: ${({ theme }) => theme.colors.footer.text.default};
     padding: 4px;
     font-size: 28px;
     transition: all, 0.15s ease-out;

@@ -70,7 +70,7 @@ module.exports = {
       options: {
         repositoryName: `${process.env.GATSBY_PRISMIC_REPO_NAME}`,
         accessToken: `${process.env.PRISMIC_API_KEY}`,
-        releaseID: `${process.env.PRISMIC_RELEASE_ID}`,
+        // releaseID: `${process.env.PRISMIC_RELEASE_ID}`,
         // prismicToolbar: true,
         linkResolver: () => (doc) => linkResolver(doc),
         // defaultLanguage: 'en-nz',
@@ -103,6 +103,14 @@ module.exports = {
         toolbar: 'new',
       },
     },
+
+    // {
+    //   resolve: `gatsby-styled-components-dark-mode`,
+    //   options: {
+    //     light: require(`./src/themes/default/pkoenders.js`),
+    //     dark: require(`./src/themes/default/pkoenders-dark.js`),
+    //   },
+    // },
 
     {
       resolve: 'gatsby-source-google-spreadsheet',
@@ -177,10 +185,19 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
 
+    // {
+    //   resolve: `gatsby-plugin-google-analytics`,
+    //   options: {
+    //     trackingId: 'UA-7623107-7',
+    //   },
+    // },
+
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: 'gatsby-plugin-google-tagmanager',
       options: {
-        trackingId: 'UA-7623107-7',
+        id: 'GTM-K99LMXQ',
+        includeInDevelopment: false,
+        enableWebVitalsTracking: true,
       },
     },
 

@@ -38,7 +38,7 @@
               "field_type": {
                 "type": "Select",
                 "config": {
-                  "options": ["Text", "Email", "Number"],
+                  "options": ["Text", "Email", "Tel", "Number"],
                   "default_value": "Text",
                   "label": "Field type"
                 }
@@ -96,7 +96,15 @@
               "button_type": {
                 "type": "Select",
                 "config": {
-                  "options": ["Primary", "Secondary", "Tertiary"],
+                  "options": [
+                    "Primary",
+                    "Secondary",
+                    "Tertiary",
+                    "White",
+                    "Black",
+                    "Link",
+                    "Transparent"
+                  ],
                   "default_value": "Primary",
                   "label": "Button type"
                 }
