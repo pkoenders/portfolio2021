@@ -2,7 +2,7 @@ module.exports = {
   pathPrefix: '/', // Prefix for all links. If you deploy your site to example.com/portfolio your pathPrefix should be "portfolio"
   title: `Website Design - Palmerston North`,
   description: `Web Designer - Palmerston North`,
-  siteUrl: `https://pkoenders.netlify.app`, // No trailing slash allowed!
+  siteUrl: `https://d67r.app`, // No trailing slash allowed!
   defaultImage: '/static/android-chrome-512x512.png', // Path to your image you placed in the 'static' folder
   logo: '/static/android-chrome-512x512.png', // Used for SEO
   author: 'Peter Koenders',
