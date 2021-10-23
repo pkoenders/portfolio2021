@@ -207,14 +207,14 @@ module.exports = {
 
     'gatsby-plugin-advanced-sitemap',
 
-    // {
-    //   resolve: 'gatsby-plugin-google-tagmanager',
-    //   options: {
-    //     id: 'GTM-K99LMXQ',
-    //     includeInDevelopment: false,
-    //     enableWebVitalsTracking: true,
-    //   },
-    // },
+    {
+      resolve: 'gatsby-plugin-google-tagmanager',
+      options: {
+        id: 'GTM-NJRNL7L',
+        includeInDevelopment: false,
+        enableWebVitalsTracking: true,
+      },
+    },
 
     {
       resolve: `gatsby-plugin-google-gtag`,
