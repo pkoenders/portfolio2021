@@ -223,7 +223,9 @@ module.exports = {
     //     policy: [{ userAgent: '*', allow: '/' }],
     //   },
     // },
-    'gatsby-plugin-sitemap',
+
+    'gatsby-plugin-advanced-sitemap',
+
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
