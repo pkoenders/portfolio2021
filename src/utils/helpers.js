@@ -150,15 +150,15 @@ export function getContentWidth(width) {
 export function getHeroImgHeight(height, vheight) {
   if (vheight === true) {
     height = parseFloat(100 - (60 / 100) * 10)
-    //console.log(height)
     return height + 'vh'
+  }
+
+  if (typeof height == 'number') {
+    return height + 'px'
   } else {
     switch (height) {
       case null:
         return '450px'
-
-      case height:
-        return height + 'px'
 
       default:
         return '450px'

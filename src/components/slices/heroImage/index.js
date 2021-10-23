@@ -1,5 +1,4 @@
 import React from 'react'
-
 // Helpers
 import { getImage } from 'gatsby-plugin-image'
 import { convertToBgImage } from 'gbimage-bridge'
@@ -18,8 +17,7 @@ import {
   getStyle,
   getPostionAlign,
   getGradientDirection,
-  getBGroundPosition,
-} from '/src/utils/helpers'
+} from '../../../utils/helpers'
 
 // Buttons
 import Button from '/src/components/common/buttons/linkButton'
@@ -161,6 +159,12 @@ const FullWidthImage = ({ slice }) => {
   // Hero image height
   var sectionHeight = getHeroImgHeight(slice.primary.height, slice.primary.v_height)
 
+  // if (slice.primary.v_height === true) {
+  //   sectionHeight = parseFloat(100 - (60 / 100) * 10) + 'vh'
+  // }
+
+  // console.log('sectionHeight = ' + sectionHeight)
+
   // Overlay colors
   var overlayFrom = getColor(slice.primary.overlay_from)
   var overlayTo = getColor(slice.primary.overlay_to)
@@ -184,10 +188,10 @@ const FullWidthImage = ({ slice }) => {
   var overlayDirection = getGradientDirection(slice.primary.overlay_direction)
 
   // Banner bGround postion
-  var alignBGround = getBGroundPosition(slice.primary.align_image)
+  var alignBGround = getPostionAlign(slice.primary.align_image)
 
   // Banner margins
-  const defaultMargin = getAutoSpacing(slice.primary.default_margin)
+  var defaultMargin = getAutoSpacing(slice.primary.default_margin)
   var vMarginTop = getManualSpacing(slice.primary.margin_top)
   var vMarginBottom = getManualSpacing(slice.primary.margin_bottom)
   if (vMarginTop === null) {
@@ -223,14 +227,29 @@ const FullWidthImage = ({ slice }) => {
   const image = getImage(slice.primary.image.localFile.childImageSharp.gatsbyImageData)
   const bgImage = convertToBgImage(image)
 
+  // Add some inline styles
+  const imageMargin = {
+    marginTop: `${vMarginTop}px`,
+    marginBottom: `${vMarginBottom}px`,
+  }
+
+  const imageHeight = {
+    height: sectionHeight,
+    // height: '450px',
+  }
+
+  const bgroundStyle = {
+    height: sectionHeight,
+    // height: '450px',
+    backgroundPosition: `center ${alignBGround}`,
+    backgroundImage: `linear-gradient(${overlayDirection}, rgba(${overlayFrom}), rgba(${overlayTo}))`,
+  }
+
   return (
     <WrapperHeroImage
       aria-label="Hero image"
       className={'section-layout heroImage ' + sectionWidth}
-      style={{
-        marginTop: vMarginTop + 'px',
-        marginBottom: vMarginBottom + 'px',
-      }}
+      style={imageMargin}
     >
       <div>
         {slice.primary.image.localFile.childImageSharp.gatsbyImageData && (
@@ -240,26 +259,13 @@ const FullWidthImage = ({ slice }) => {
             // Spread bgImage into BackgroundImage:
             {...bgImage}
             preserveStackingContext
-            style={{
-              backgroundPosition: alignBGround,
-              height: sectionHeight,
-              backgroundImage:
-                `linear-gradient(` +
-                overlayDirection +
-                `, rgba(` +
-                overlayFrom +
-                `), rgba(` +
-                overlayTo +
-                `))`,
-            }}
+            style={bgroundStyle}
           />
         )}
 
         <div
           className={'wrapper ' + `${slice.primary.vertical_align_content}`.toLowerCase()}
-          style={{
-            height: sectionHeight,
-          }}
+          style={imageHeight}
         >
           <div className={'content ' + `${slice.primary.align_content}`.toLowerCase()}>
             {(title || description) !== null && (
