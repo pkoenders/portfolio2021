@@ -15,7 +15,7 @@ const SkipFilterWrapper = styled.span.attrs((props) => ({
     justify-content: center;
     height: 60px;
   background-color: ${({ theme }) => theme.colors.tertiary[200]};
-        z-index: 100000;
+      z-index: 100000;
 
     .skipLink {
       margin: 0 ${({ theme }) => theme.margin['1/2']};
