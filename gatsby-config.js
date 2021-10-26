@@ -242,14 +242,7 @@ module.exports = {
       options: {
         host: 'https://pkoenders.netlify.app',
         sitemap: 'https://pkoenders.netlify.app/sitemap.xml',
-        env: {
-          development: {
-            policy: [{ userAgent: '*', disallow: ['/'] }],
-          },
-          production: {
-            policy: [{ userAgent: '*', allow: '/' }],
-          },
-        },
+        policy: [{ userAgent: '*', allow: '/' }],
       },
     },
 
