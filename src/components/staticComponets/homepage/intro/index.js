@@ -24,7 +24,6 @@ const IntroSection = styled.section`
     margin: auto;
     padding: 0 ${({ theme }) => theme.padding['1/2']};
     text-align: center;
-
     /* font-size: 120%; */
     /* font-weight: 600; */
     color: ${({ theme }) => theme.colors.page[100]};
@@ -242,8 +241,8 @@ const Intro = () => {
             </i> */}
               {/* <IconDevelopment /> */}
               <p>
-                I work collaboratively to plan, design, and deliver crafted solutions with
-                professionalism, integrity, and care.
+                I collaboratively plan, design, and deliver crafted solutions with professionalism,
+                integrity and care.
               </p>
             </span>
           </div>

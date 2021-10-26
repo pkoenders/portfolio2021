@@ -40,7 +40,6 @@ const ApproachSection = styled.section`
         -moz-background-clip: text;
         -moz-text-fill-color: transparent; */
         color: ${({ theme }) => theme.colors.tertiary[900]};
-
         /* opacity: 0.75; */
         margin-top: -${({ theme }) => theme.padding['1/4']};
         /* box-shadow: ${({ theme }) => theme.boxShadow.default}; */
@@ -89,8 +88,7 @@ const Approch = () => {
                 </a>{' '}
                 meet Google's Core Web Vitals. Does your website meet the Core Web Vitals? More
                 importantly, has your website provider talked to you about their strategy on how
-                they plan to meet the Core Web Vitals? As of June 2021, Google will start to
-                consider{' '}
+                they plan to meet the Core Web Vitals? As of June 2021, Google will consider{' '}
                 <a href="https://developers.google.com/search/blog/2020/11/timing-for-page-experience">
                   “Page Experience”
                 </a>{' '}
@@ -119,8 +117,10 @@ const Approch = () => {
             <span>
               <p>Accessibility</p>
               <p>
-                I support digital accessibility, and it is considered into my design and build from
-                the start. It is not an afterthought or something to test for later.{' '}
+                I support digital accessibility. Accessibility does not happen by accident. It has
+                to be purposefully planned, built, and tested. Inaccessible websites deprive users
+                with disabilities of experiences and opportunities that other people take for
+                granted.{' '}
                 <a href="https://www.stats.govt.nz/news/one-in-four-new-zealanders-identified-as-disabled">
                   24% of New Zealanders
                 </a>{' '}
