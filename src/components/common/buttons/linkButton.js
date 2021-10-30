@@ -46,6 +46,9 @@ const BtnWrapper = styled.span`
     /* transition: all 0.2s cubic-bezier(0.55, 0, 0.1, 1); */
     transition: ${({ theme }) => theme.transition.linear.quick};
 
+    @media print {
+      display: none;
+    }
     i {
       line-height: 0;
       color: inherit;

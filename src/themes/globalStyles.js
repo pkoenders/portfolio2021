@@ -38,7 +38,37 @@ export const GlobalStyles = createGlobalStyle`
   body {
      line-height: ${({ theme }) => theme.lineHeight.relaxed};
      letter-spacing: ${({ theme }) => theme.letterSpacing.normal};
-  }  
+  } 
+  
+   @media print {  
+    * { 
+      overflow: visible;
+    }
+
+    html, body {
+      width: 210mm;
+      height: 297mm;
+    }
+
+    header {
+      position: relative !important;
+      -webkit-print-color-adjust: exact;
+    }
+
+    main {
+      margin: 11mm 0;      
+    }
+
+    div, li, a {
+      break-inside: avoid;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 0;
+    }
+  }
+
 
   section.light {
     color: ${({ theme }) => theme.colors.page.default};
