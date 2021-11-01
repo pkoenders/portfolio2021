@@ -204,7 +204,7 @@ const Intro = () => {
 
   return (
     <IntroSection className="sectionIntro section-layout wide">
-      <h2 className="title">Tēnā koe, welcome to my portfolio.</h2>
+      <span lang="mi">Tēnā koe</span>, welcome to my portfolio.
       <div>
         <article className="intro">
           <div className="part1">
