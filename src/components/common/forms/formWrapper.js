@@ -182,6 +182,7 @@ const FormWraper = styled.div`
     }
 
     div.richText {
+      margin-left: ${({ theme }) => theme.margin['1/4']};
       p {
         text-indent: 0;
       }
