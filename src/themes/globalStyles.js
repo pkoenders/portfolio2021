@@ -103,15 +103,18 @@ export const GlobalStyles = createGlobalStyle`
     border-bottom: 1px solid ${({ theme }) => theme.colors.accent.default} !important;
   }
 
-  a:focus {
-    outline: none;
-  }
+
+
 
   a:focus-visible,
   button:focus-visible{
     outline: 2px solid ${({ theme }) => theme.colors.focusVisible} !important; 
   }
 
+    a:focus:not(:focus-visible),
+    button:focus:not(:focus-visible) {
+    outline: none;
+  }
   /* a:-moz-focusring {
     outline: 2px solid ${({ theme }) => theme.colors.focusVisible} !important; 
   } */
