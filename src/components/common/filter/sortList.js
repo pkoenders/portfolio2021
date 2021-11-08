@@ -157,7 +157,7 @@ const Sort = ({ currentLang, items, toggleSortListClick, sortItemClick, sortAscD
         <div>
           {items.map((node, i) => (
             <SortItem
-              type="button"
+              // type="button"
               onClick={sortItemClick}
               data-nodepath={items[i].nodePath}
               key={'list-item'[i]}
