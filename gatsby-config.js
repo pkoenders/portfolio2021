@@ -205,7 +205,7 @@ module.exports = {
     //   },
     // },
 
-    'gatsby-plugin-advanced-sitemap',
+    `gatsby-plugin-advanced-sitemap`,
 
     {
       resolve: 'gatsby-plugin-google-tagmanager',
