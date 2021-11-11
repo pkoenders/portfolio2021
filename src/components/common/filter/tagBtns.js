@@ -140,14 +140,15 @@ const ListTagBtns = ({ resetFilterBtns, tagList, resetCards, resetSearchQuery })
   // Filter list items
   const handleFilterItem = (e) => {
     const tagBtn = e.target
+    const tagBtnText = e.target.innerText
 
     // Select filter btn
     tagBtn.classList.toggle('isActive')
 
     // Set the aria label for tags
-    tagBtn.getAttribute('aria-label') === 'Tag is Selected'
-      ? tagBtn.setAttribute('aria-label', 'Tag is unselected')
-      : tagBtn.setAttribute('aria-label', 'Tag is Selected')
+    tagBtn.getAttribute('aria-label') === `${tagBtnText} - selected`
+      ? tagBtn.setAttribute('aria-label', `${tagBtnText} - unselected`)
+      : tagBtn.setAttribute('aria-label', `${tagBtnText} - selected`)
 
     //  var activeFilterBtns = document.getElementsByClassName('tagButton isActive')
     var allCards = document.getElementsByClassName('item')
@@ -288,7 +289,7 @@ const ListTagBtns = ({ resetFilterBtns, tagList, resetCards, resetSearchQuery })
       </div>
 
       <span className="wrapper">
-        <span className="inner">
+        <span className="inner" aria-live="polite">
           {tagList.map((node, index) => (
             <button
               className="tagButton"
@@ -297,7 +298,7 @@ const ListTagBtns = ({ resetFilterBtns, tagList, resetCards, resetSearchQuery })
               key={`tagButton-` + index}
               onMouseDown={resetCards}
               onClick={handleFilterItem}
-              aria-label={'Unselected'}
+              aria-label={` ${node} - unselected`}
             >
               {node}
             </button>
