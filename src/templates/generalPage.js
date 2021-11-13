@@ -90,7 +90,7 @@ export const query = graphql`
         #Page data
         body {
           ##
-          ## Hero mage
+          ## Hero image
           ... on PrismicGeneralPageDataBodyHeroImage {
             slice_type
             primary {
@@ -135,6 +135,8 @@ export const query = graphql`
               overlay_to_opacity
               overlay_direction
               align_image
+              background_color
+              background_opacity
               image {
                 localFile {
                   childImageSharp {
@@ -492,6 +494,7 @@ export const query = graphql`
                           id
                           slice_type
                           primary {
+                            described_by
                             required
                             field_name {
                               text
@@ -504,6 +507,7 @@ export const query = graphql`
                           id
                           slice_type
                           primary {
+                            described_by
                             required
                             field_type
                             field_name {
@@ -517,6 +521,7 @@ export const query = graphql`
                           id
                           slice_type
                           primary {
+                            described
                             align_with_input
                             text {
                               text
@@ -533,6 +538,7 @@ export const query = graphql`
                             title {
                               text
                             }
+                            described_by
                             required
                             align
                           }
@@ -556,6 +562,7 @@ export const query = graphql`
                             title {
                               text
                             }
+                            described_by
                             required
                             align
                           }
@@ -573,6 +580,7 @@ export const query = graphql`
                             title {
                               text
                             }
+                            described_by
                             required
                           }
                           slice_type
