@@ -16,6 +16,7 @@ const ListTagBtnsWrapper = styled.div`
     button {
       pointer-events: all;
       display: flex;
+      width: fit-content;
       flex-direction: row;
       align-items: center;
       justify-content: center;
@@ -106,6 +107,7 @@ const ResetTagsBtn = styled.button.attrs((props) => ({
   position: relative;
   left: 0px;
   right: auto;
+
   i {
     font-size: 20px;
     pointer-events: none;
