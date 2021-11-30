@@ -68,9 +68,12 @@ const BlogList = ({ currentLang, pageIntro, dataList }) => {
     selectList.classList.toggle('isActive')
 
     // Set the buttons state, if matched sort label? then hide
+    // Set the buttons state, if matched sort label? then hide
     let btns = selectList.childNodes
     for (let i = 0; i < btns.length; i++) {
+      btns[i].setAttribute('aria-hidden', 'false')
       btns[i].innerText === selectListLabel && btns[i].classList.add('hide')
+      btns[i].innerText === selectListLabel && btns[i].setAttribute('aria-hidden', 'true')
     }
   }, [])
 
@@ -81,7 +84,7 @@ const BlogList = ({ currentLang, pageIntro, dataList }) => {
       const sortLabelBtn = e.target.parentNode.previousSibling
       const sortLabel = e.target.parentNode.previousSibling.querySelector('span')
 
-      sortLabelBtn.setAttribute('aria-label', `Sort by ${e.target.innerText}`)
+      sortLabelBtn.setAttribute('aria-label', `Sort by ${e.target.innerText} active`)
       sortLabel.innerText = e.target.innerText
 
       // Add the node to be sorted to the node path
@@ -251,7 +254,7 @@ const BlogList = ({ currentLang, pageIntro, dataList }) => {
       {pageTitle !== null && <h1 className="hide">{pageTitle}</h1>}
 
       {pageIntro.show_filters === true && (
-        <Filter aria-label="Filter tools">
+        <Filter aria-label="Filter">
           <SkipFilter />
           <div>
             {pageIntro.show_tags === true && tagList.length > 0 && (

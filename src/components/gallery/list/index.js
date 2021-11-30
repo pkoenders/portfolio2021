@@ -100,7 +100,9 @@ const GalleryList = ({ currentLang, pageIntro, dataList }) => {
     // Set the buttons state, if matched sort label? then hide
     let btns = selectList.childNodes
     for (let i = 0; i < btns.length; i++) {
+      btns[i].setAttribute('aria-hidden', 'false')
       btns[i].innerText === selectListLabel && btns[i].classList.add('hide')
+      btns[i].innerText === selectListLabel && btns[i].setAttribute('aria-hidden', 'true')
     }
   }, [])
 
@@ -281,7 +283,7 @@ const GalleryList = ({ currentLang, pageIntro, dataList }) => {
       {pageTitle !== null && <h1 className="hide">{pageTitle}</h1>}
 
       {pageIntro.show_filters === true && (
-        <Filter aria-label="Filter tools">
+        <Filter aria-label="Filter">
           <SkipFilter />
           <div>
             {pageIntro.show_tags === true && tagList.length > 0 && (
@@ -348,7 +350,7 @@ const GalleryList = ({ currentLang, pageIntro, dataList }) => {
           {allPosts.length > 0 ? (
             <SimpleReactLightbox>
               <SRLWrapper options={options}>
-                <ListGrid defaultColCount={2} aria-label="List of portfolio items">
+                <ListGrid defaultColCount={2}>
                   {allPosts.map((node, index) => (
                     <GridItem
                       thisItem={allPosts[index]}
