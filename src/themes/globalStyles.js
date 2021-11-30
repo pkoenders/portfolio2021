@@ -11,7 +11,7 @@ export const screenSize = theme.screens
 
 export const GlobalStyles = createGlobalStyle`
   ${reset}
-
+  
   *, *:before, *:after {
     box-sizing: border-box;
     margin: 0;
@@ -38,9 +38,9 @@ export const GlobalStyles = createGlobalStyle`
   body {
      line-height: ${({ theme }) => theme.lineHeight.relaxed};
      letter-spacing: ${({ theme }) => theme.letterSpacing.normal};
-  } 
-  
-   @media print {  
+  }  
+
+  @media print {  
     * { 
       overflow: visible;
     }
@@ -56,8 +56,8 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     main {
-      margin: 11mm 0;
-      overflow: hidden;   
+      margin: 11mm 0; 
+      overflow: hidden;      
     }
 
     div, li, a {
@@ -70,10 +70,11 @@ export const GlobalStyles = createGlobalStyle`
     }
   }
 
+
   .hide {
     display: none;
   }
-
+  
   .sr-only {
     position:absolute;
     left:-10000px;
@@ -113,18 +114,27 @@ export const GlobalStyles = createGlobalStyle`
     border-bottom: 1px solid ${({ theme }) => theme.colors.accent.default} !important;
   }
 
-
-
-
-  a:focus-visible,
-  button:focus-visible{
-    outline: 2px solid ${({ theme }) => theme.colors.focusVisible} !important; 
-  }
-
-    a:focus:not(:focus-visible),
-    button:focus:not(:focus-visible) {
+  a:focus {
     outline: none;
   }
+  
+  :focus:not(:focus-visible),
+  :focus:not(:-webkit-direct-focus) {
+    outline: 0; 
+  }
+
+    /* :not([tabindex='-1']),
+  :focus:not(:focus-visible),
+  a:focus:not(:focus-visible),
+  button:focus:not(:focus-visible) {
+    outline: 0;
+  } */
+
+  :focus-visible,
+  :-webkit-direct-focus {
+    outline: 2px solid ${({ theme }) => theme.colors.focusVisible}; 
+  }
+
   /* a:-moz-focusring {
     outline: 2px solid ${({ theme }) => theme.colors.focusVisible} !important; 
   } */
@@ -283,8 +293,8 @@ export const GlobalStyles = createGlobalStyle`
   button {
     font-size: ${({ theme }) => theme.fontSize.base};
     color: ${({ theme }) => theme.colors.page.default};
-   background-color: transparent;  
-    outline: none;
+    background-color: transparent;  
+    /* outline: none; */
     border:none;
   }
 
