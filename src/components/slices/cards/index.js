@@ -190,6 +190,7 @@ const CardsWrapper = styled.section`
       }
       .imageWrapper {
         aspect-ratio: 1;
+
         width: 128px;
         border-radius: 999rem;
         /* border: 1px solid ${({ theme }) => theme.colors.secondary.default}; */

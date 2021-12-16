@@ -63,6 +63,7 @@ const WrapperHeroImage = styled.section`
       max-width: ${({ theme }) => theme.screens.md};
       margin: 0 auto;
       z-index: 100;
+
       top: 0;
       left: 0;
       right: 0;
@@ -223,10 +224,10 @@ const FullWidthImage = ({ slice }) => {
   }
 
   // Validate title
-  const title = validateString(slice.primary.title.raw)
+  const title = validateString(slice.primary.title.richText)
 
   // Validate description
-  const description = validateString(slice.primary.description.raw)
+  const description = validateString(slice.primary.description.richText)
 
   // Validate primary button
   const primaryButtonLabel = validateString(slice.primary.button_label)
@@ -244,7 +245,7 @@ const FullWidthImage = ({ slice }) => {
 
   // console.log(secondaryButtonLink.raw.link_type)
 
-  const image = getImage(slice.primary.image.localFile.childImageSharp.gatsbyImageData)
+  const image = getImage(slice.primary.image.gatsbyImageData)
   const bgImage = convertToBgImage(image)
 
   // Add some inline styles
@@ -261,6 +262,7 @@ const FullWidthImage = ({ slice }) => {
   const bgroundStyle = {
     height: sectionHeight,
     // height: '450px',
+    with: '100%',
     backgroundPosition: `center ${alignBGround}`,
     backgroundImage: `linear-gradient(${overlayDirection}, rgba(${overlayFrom}), rgba(${overlayTo}))`,
   }
@@ -276,7 +278,7 @@ const FullWidthImage = ({ slice }) => {
       style={imageMargin}
     >
       <div>
-        {slice.primary.image.localFile.childImageSharp.gatsbyImageData && (
+        {slice.primary.image.gatsbyImageData && (
           <BackgroundImage
             // Tag="section"
             Tag="div"

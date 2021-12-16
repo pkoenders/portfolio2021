@@ -35,31 +35,33 @@ module.exports = {
               family: `Material+Icons+Round`,
               text: `abcdefghijklmnopqrstuvwxyz_`,
               // fontDisplay: 'swap',
-              // strategy: 'base64',
-              // strategy: 'cdn',
-            },
-
-            {
-              family: 'Roboto',
-              axes: 'wght@300;400;500;600',
-              // fontDisplay: 'swap',
-              // strategy: 'base64', // 'base64' || 'cdn'
+              strategy: 'base64',
               // strategy: 'cdn',
             },
 
             // {
-            //   family: 'Open+Sans',
+            //   family: 'Roboto',
             //   axes: 'wght@300;400;500;600',
             //   // fontDisplay: 'swap',
             //   // strategy: 'base64', // 'base64' || 'cdn'
+
             //   // strategy: 'cdn',
             // },
+
+            {
+              family: 'Open+Sans',
+              axes: 'wght@300;400;500;600',
+              // fontDisplay: 'swap',
+              // strategy: 'base64', // 'base64' || 'cdn'
+              strategy: 'base64',
+              // strategy: 'cdn',
+            },
 
             {
               family: 'Rokkitt',
               axes: 'wght@300;500',
               // fontDisplay: 'swap',
-              // strategy: 'base64',
+              strategy: 'base64',
               // strategy: 'cdn',
             },
 
@@ -67,12 +69,12 @@ module.exports = {
               family: 'Merriweather',
               axes: 'wght@400',
               // fontDisplay: 'swap',
-              // strategy: 'base64',
+              strategy: 'base64',
               // strategy: 'cdn',
             },
           ],
         },
-        useMinify: true,
+        // useMinify: true,
         // usePreload: true,
         // usePreconnect: true,
       },
@@ -103,6 +105,7 @@ module.exports = {
           shared_content: require('./custom_types/shared_content.json'),
           main_navigation: require('./custom_types/main_navigation.json'),
         },
+
         // add prismic toolbar
         // prismicToolbar: true,
       },
@@ -197,31 +200,15 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-
-    // {
-    //   resolve: `gatsby-plugin-google-analytics`,
-    //   options: {
-    //     trackingId: 'UA-7623107-7',
-    //   },
-    // },
-
-    `gatsby-plugin-advanced-sitemap`,
-
-    {
-      resolve: 'gatsby-plugin-google-tagmanager',
-      options: {
-        id: 'GTM-NJRNL7L',
-        includeInDevelopment: false,
-        enableWebVitalsTracking: true,
-      },
-    },
+    // 'gatsby-plugin-advanced-sitemap',
+    `gatsby-plugin-sitemap`,
 
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
         // You can add multiple tracking ids and a pageview event will be fired for all of them.
         trackingIds: [
-          'G-XKYVS8LDN0', // Google Analytics / GA
+          'G-V4GEV21FN2', // Google Analytics / GA
         ],
 
         // This object is used for configuration specific to this plugin
@@ -240,9 +227,16 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        host: 'https://pkoenders.netlify.app',
-        sitemap: 'https://pkoenders.netlify.app/sitemap.xml',
-        policy: [{ userAgent: '*', allow: '/' }],
+        host: 'https://d67r.app',
+        sitemap: 'https://d67r.app/sitemap.xml',
+        env: {
+          development: {
+            policy: [{ userAgent: '*', disallow: ['/'] }],
+          },
+          production: {
+            policy: [{ userAgent: '*', allow: '/' }],
+          },
+        },
       },
     },
 
@@ -272,9 +266,9 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Portfolio | Peter Koenders`,
-        description: `Portfolio | Peter Koenders`,
-        short_name: `Peter Koenders`,
+        name: `Website Design - Palmerston North`,
+        description: `Website Design - Palmerston North`,
+        short_name: `Website Design`,
         start_url: `/`,
         background_color: `#091b38`,
         theme_color: `#091b38`,

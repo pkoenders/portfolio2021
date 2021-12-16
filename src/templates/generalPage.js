@@ -39,7 +39,6 @@ export const query = graphql`
     allPrismicMainNavigation(filter: { lang: { eq: $locale } }) {
       edges {
         node {
-          _previewable
           type
           lang
           id
@@ -97,10 +96,10 @@ export const query = graphql`
             primary {
               title {
                 text
-                raw
+                richText
               }
               description {
-                raw
+                richText
               }
               button_label
               button_link {
@@ -139,17 +138,19 @@ export const query = graphql`
               background_color
               background_opacity
               image {
-                localFile {
-                  childImageSharp {
-                    gatsbyImageData(
-                      quality: 80
-                      layout: FULL_WIDTH
-                      transformOptions: { fit: COVER, cropFocus: ATTENTION }
-                      placeholder: BLURRED
-                      formats: [AUTO, WEBP, AVIF]
-                    )
+                gatsbyImageData(
+                  layout: FULL_WIDTH
+                  placeholder: BLURRED
+                  imgixParams: {
+                    q: 80
+                    fill: "blur"
+                    fit: "crop"
+                    fm: "avif, webp"
+                    nr: 100
+                    dpr: 2
+                    auto: "compress,enhance,format"
                   }
-                }
+                )
               }
             }
           }
@@ -172,7 +173,7 @@ export const query = graphql`
               animate_scroll
               content {
                 text
-                raw
+                richText
               }
               button_alignment
               button_label
@@ -207,7 +208,7 @@ export const query = graphql`
             primary {
               title {
                 text
-                raw
+                richText
               }
               width
               default_padding
@@ -220,7 +221,7 @@ export const query = graphql`
               title
               content {
                 text
-                raw
+                richText
               }
               active
             }
@@ -233,7 +234,7 @@ export const query = graphql`
             id
             primary {
               card_title {
-                raw
+                richText
                 text
               }
               aria_label
@@ -251,7 +252,7 @@ export const query = graphql`
               format
               title
               description {
-                raw
+                richText
                 text
               }
               link_label {
@@ -265,19 +266,18 @@ export const query = graphql`
               }
               image {
                 alt
-                localFile {
-                  childImageSharp {
-                    gatsbyImageData(
-                      ## aspectRatio: 1.777777
-                      quality: 80
-                      width: 564
-                      layout: CONSTRAINED
-                      formats: [AUTO, WEBP, AVIF]
-                      placeholder: BLURRED
-                      transformOptions: { cropFocus: ATTENTION }
-                    )
+                gatsbyImageData(
+                  width: 564
+                  layout: CONSTRAINED
+                  placeholder: BLURRED
+                  imgixParams: {
+                    q: 80
+                    fm: "avif, webp"
+                    nr: 100
+                    dpr: 2
+                    auto: "compress,enhance,format"
                   }
-                }
+                )
               }
             }
           }
@@ -288,7 +288,7 @@ export const query = graphql`
             primary {
               content {
                 text
-                raw
+                richText
               }
               button_label
               button_link {
@@ -338,20 +338,19 @@ export const query = graphql`
                           slice_type
                           primary {
                             image {
-                              localFile {
-                                childImageSharp {
-                                  gatsbyImageData(
-                                    aspectRatio: 1.777777
-                                    quality: 80
-                                    #width:735,
-                                    #layout: CONSTRAINED,
-                                    layout: FULL_WIDTH
-                                    formats: [AUTO, WEBP, AVIF]
-                                    placeholder: BLURRED
-                                    transformOptions: { cropFocus: CENTER }
-                                  )
+                              alt
+                              gatsbyImageData(
+                                aspectRatio: 1.777777
+                                layout: FULL_WIDTH
+                                placeholder: BLURRED
+                                imgixParams: {
+                                  q: 80
+                                  fm: "avif, webp"
+                                  nr: 100
+                                  dpr: 2
+                                  auto: "compress,enhance,format"
                                 }
-                              }
+                              )
                             }
                           }
                         }
@@ -374,7 +373,7 @@ export const query = graphql`
                           slice_type
                           primary {
                             text {
-                              raw
+                              richText
                             }
                           }
                         }
@@ -385,7 +384,7 @@ export const query = graphql`
                           slice_type
                           primary {
                             description {
-                              raw
+                              richText
                               text
                             }
                             geopoint {
@@ -406,7 +405,7 @@ export const query = graphql`
                           id
                           primary {
                             content {
-                              raw
+                              richText
                               text
                             }
                             width
@@ -456,7 +455,7 @@ export const query = graphql`
             slice_type
             primary {
               content {
-                raw
+                richText
                 text
               }
               width
@@ -475,7 +474,7 @@ export const query = graphql`
                         text
                       }
                       from_content {
-                        raw
+                        richText
                       }
                       body {
                         ## Button
@@ -526,7 +525,7 @@ export const query = graphql`
                             align_with_input
                             text {
                               text
-                              raw
+                              richText
                             }
                           }
                         }
@@ -606,7 +605,7 @@ export const query = graphql`
             items {
               uncheck
               item {
-                raw
+                richText
                 text
               }
             }

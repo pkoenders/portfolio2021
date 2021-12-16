@@ -20,6 +20,11 @@ const FooterWrapper = styled.footer`
     margin: 0 auto;
     z-index: 1000 !important;
 
+    p {
+      margin-bottom: ${({ theme }) => theme.margin['1/4']};
+      position: relative;
+    }
+
     a.brand {
       position: relative;
       color: unset;
@@ -42,11 +47,6 @@ const FooterWrapper = styled.footer`
     a:hover {
       color: inherit;
       text-decoration: none;
-    }
-
-    p {
-      margin-bottom: ${({ theme }) => theme.margin['1/4']};
-      position: relative;
     }
   }
 `

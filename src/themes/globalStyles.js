@@ -33,6 +33,7 @@ export const GlobalStyles = createGlobalStyle`
     text-rendering: optimizeLegibility;
     word-wrap: break-word;
     font-kerning: normal;
+
   }
 
   body {
