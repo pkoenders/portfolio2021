@@ -37,8 +37,8 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   body {
-      line-height: 1.75;
-     letter-spacing: ${({ theme }) => theme.letterSpacing.normal};
+    line-height: 1.75;
+    letter-spacing: ${({ theme }) => theme.letterSpacing.normal};
   }  
 
   @media print {  
