@@ -225,7 +225,7 @@ export const defaultTheme = {
     // sans: 'Roboto, sans-serif',
     sans: '"Open Sans", sans-serif',
     slab: 'Rokkitt, serif',
-    headers: 'Bitter, serif',
+    headers: 'Domine, serif',
     mono: ['Menlo', 'Monaco', 'Consolas', '"Liberation Mono"', '"Courier New"', 'monospace'],
     serif: 'Merriweather, serif',
   },

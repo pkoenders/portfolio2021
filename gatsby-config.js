@@ -58,7 +58,7 @@ module.exports = {
             },
 
             {
-              family: 'Bitter',
+              family: 'Domine',
               axes: 'wght@400;500',
               // fontDisplay: 'swap',
               strategy: 'base64',
