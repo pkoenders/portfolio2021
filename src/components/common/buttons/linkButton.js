@@ -63,8 +63,8 @@ const BtnWrapper = styled.span`
   }
 
   .btn.accent {
-    background-color: ${({ theme }) => theme.colors.accent.default};
-    border: 1px solid ${({ theme }) => theme.colors.accent[1100]};
+    background-color: ${({ theme }) => theme.colors.primary[500]};
+    border: 1px solid ${({ theme }) => theme.colors.primary[900]};
     i {
       color: inherit;
     }
