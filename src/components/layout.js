@@ -9,6 +9,7 @@ import styled from 'styled-components'
 const LayoutWrapper = styled.div`
   display: flex;
   min-width: 100%;
+  /* width: 100%; */
   flex-direction: column;
   min-height: 100vh;
   background-color: ${({ theme }) => theme.colors.page.bground.default};
@@ -30,16 +31,10 @@ const LayoutWrapper = styled.div`
         margin-top: 60px;
       }
 
-      section.section-layout.heroImage:first-child {
-        padding-top: 0px;
-        margin-top: 60px;
-      }
-    }
-
-    main.index {
-      section.section-layout.heroImage:first-child {
-        padding-top: 0px;
-        margin-top: 0px;
+      section.section-layout.heroBanner:first-child {
+        .heroImage {
+          margin-top: 0px !important;
+        }
       }
     }
 
