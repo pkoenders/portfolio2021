@@ -236,7 +236,7 @@ module.exports = {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
         host: 'https://pkoenders.netlify.app',
-        sitemap: 'https://pkoenders.netlify.app/sitemap/sitemap-0.xml',
+        sitemap: 'https://pkoenders.netlify.app/sitemap/sitemap-index.xml',
         env: {
           development: {
             policy: [{ userAgent: '*', disallow: ['/'] }],
