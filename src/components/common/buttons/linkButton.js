@@ -34,10 +34,14 @@ const BtnWrapper = styled.span`
     padding: 16px ${({ theme }) => theme.padding.default};
     padding: 12px 24px;
     text-align: center;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     text-decoration: none !important;
-    font-weight: 600;
-    font-family: inherit;
+
+    /* font-family: inherit; */
+    font-family: ${({ theme }) => theme.font.sans};
+    font-size: 18px;
+    font-variation-settings: 'GRAD' 0;
+    font-weight: 500;
     line-height: initial;
     letter-spacing: ${({ theme }) => theme.letterSpacing.wide};
     color: #ffffff;
@@ -47,7 +51,15 @@ const BtnWrapper = styled.span`
     box-sizing: border-box;
     box-shadow: ${({ theme }) => theme.boxShadow.md};
     /* transition: all 0.2s cubic-bezier(0.55, 0, 0.1, 1); */
-    transition: ${({ theme }) => theme.transition.linear.quick};
+    transition: ${({ theme }) => theme.transition.linear.slow};
+
+    &:hover,
+    &:focus {
+      box-shadow: ${({ theme }) => theme.boxShadow.lg};
+      transition: ${({ theme }) => theme.transition.linear.quick};
+      font-variation-settings: 'GRAD' 150 !important;
+      transition: ${({ theme }) => theme.transition.linear.slow};
+    }
 
     i {
       line-height: 0;
@@ -57,9 +69,6 @@ const BtnWrapper = styled.span`
 
   .btn.right {
     flex-direction: row-reverse;
-  }
-  .btn:hover {
-    box-shadow: ${({ theme }) => theme.boxShadow.lg};
   }
 
   .btn.accent {
@@ -72,9 +81,8 @@ const BtnWrapper = styled.span`
 
   .btn.primary {
     color: ${({ theme }) => theme.colors.header.default};
-    font-weight: 400;
     background-color: ${({ theme }) => theme.colors.primary[200]};
-    border: 1px solid ${({ theme }) => theme.colors.primary[600]};
+    border: 1px solid ${({ theme }) => theme.colors.primary[700]};
     i {
       color: inherit;
     }

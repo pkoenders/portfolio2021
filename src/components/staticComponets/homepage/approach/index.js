@@ -19,7 +19,7 @@ const ApproachSection = styled.section`
     overflow: hidden;
 
     div {
-      padding: ${({ theme }) => theme.padding.default} 0;
+      padding: ${({ theme }) => theme.padding['1/2']} 0;
       width: 100%;
       display: flex;
       flex-direction: row;
@@ -41,7 +41,7 @@ const ApproachSection = styled.section`
         -moz-text-fill-color: transparent; */
         color: ${({ theme }) => theme.colors.tertiary[1200]};
         /* opacity: 0.75; */
-        margin-top: -${({ theme }) => theme.padding['1/4']};
+        margin-top: -${({ theme }) => theme.padding['1/8']};
         /* box-shadow: ${({ theme }) => theme.boxShadow.default}; */
       }
 
@@ -50,6 +50,7 @@ const ApproachSection = styled.section`
         h4 {
           /* font-weight: 500;
           margin-bottom: 0.1em; */
+          margin-bottom: 0.2em;
         }
 
         /* p:first-of-type {
@@ -69,7 +70,7 @@ const ApproachSection = styled.section`
           }
         }
         span {
-          margin-top: ${({ theme }) => theme.padding['1/2']};
+          margin-top: ${({ theme }) => theme.padding['1/4']};
           a {
             margin: 0 auto 0 0;
           }
