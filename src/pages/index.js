@@ -1,6 +1,8 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout'
+import MetaData from '/src/components/common/meta/'
+
 import SeoZone from '/src/components/slices/seoZone'
 import SliceZone from '/src/components/slices/sliceZone'
 import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
@@ -19,6 +21,7 @@ const HomeTemplate = ({ data, location }) => {
 
   return (
     <Layout currentLang={currentLang} primaryNav={primaryNav}>
+      <MetaData />
       <SeoZone currentLang={currentLang} seoZone={document.data.body1} />
       <SliceZone location={location} sliceZone={document.data.body} />
     </Layout>
@@ -100,8 +103,30 @@ export const query = graphql`
           ... on PrismicHomepageDataBodyHeroImage {
             slice_type
             primary {
+              leading_image {
+                gatsbyImageData(
+                  layout: CONSTRAINED
+                  placeholder: BLURRED
+                  imgixParams: {
+                    q: 75
+                    fill: "blur"
+                    fit: "crop"
+                    fm: "jpg, avif, webp, svg"
+                    nr: 20
+                    nrs: 50
+                    dpr: 3
+                    auto: "compress,format"
+                  }
+                )
+                alt
+              }
+              leading_image_height
               title {
                 text
+                richText
+              }
+              title_color
+              description {
                 richText
               }
               description {
@@ -177,7 +202,7 @@ export const query = graphql`
               text_alignment
               width
               columns
-              animate_scroll
+              ## animate_scroll
               content {
                 text
                 richText
@@ -255,7 +280,7 @@ export const query = graphql`
               v_padding_bottom
               background_color
               background_tint
-              animate_scroll
+              ## animate_scroll
             }
             items {
               format
