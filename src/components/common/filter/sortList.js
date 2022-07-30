@@ -924,7 +924,6 @@ const Sort = ({
             <li // eslint-disable-line jsx-a11y/no-static-element-interactions
               id={'list-item'[i]}
               role="option"
-              tabindex="0"
               aria-selected="false"
               data-nodepath={items[i].nodePath}
               key={'list-item'[i]}
