@@ -11,6 +11,16 @@ import Button from '/src/components/common/buttons/linkButton'
 
 import styled from 'styled-components'
 
+const FillPageColor = styled.div`
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 auto;
+  z-index: 1;
+  background-color: ${({ theme }) => theme.colors.header.default};
+`
+
 const NotFound = styled.section`
   margin: 0;
   padding: 0;
@@ -20,12 +30,14 @@ const NotFound = styled.section`
   align-items: center;
   margin-top: ${({ theme }) => theme.header.height};
   grid-gap: ${({ theme }) => theme.padding.default};
+
   span {
     margin: auto;
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: ${({ theme }) => theme.padding.default} 0;
     grid-gap: ${({ theme }) => theme.padding['1/2']};
     h1,
     p {
@@ -43,19 +55,21 @@ const NotFoundPage = ({ data }) => {
   const currentLang = data.prismicMainNavigation.lang
   return (
     <Layout currentLang={currentLang} primaryNav={primaryNav}>
-      <Bground404 />
-      <NotFound className="section-layout">
-        <span>
-          <h1>Oh purr-leaze!</h1>
-          <p>It appears that Zoe has hidden this page.</p>
-          <Button
-            buttonLabel={'Take me home'}
-            buttonType={'Static'}
-            buttonLink={'/'}
-            buttonStyle={'white'}
-          />
-        </span>
-      </NotFound>
+      <FillPageColor>
+        <Bground404 />
+        <NotFound>
+          <span>
+            <h1>Oh purr-leaze!</h1>
+            <p>It appears that Zoe has hidden this page.</p>
+            <Button
+              buttonLabel={'Take me home'}
+              buttonType={'Static'}
+              buttonLink={'/'}
+              buttonStyle={'white'}
+            />
+          </span>
+        </NotFound>
+      </FillPageColor>
     </Layout>
   )
 }
