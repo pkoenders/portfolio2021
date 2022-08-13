@@ -98,6 +98,8 @@ const HeroImage = styled.section.attrs({
 
     .contentWrapper {
       
+
+
       .content,
       .content.centre {
         margin: 0 auto;

@@ -401,7 +401,6 @@ const ItemContent = styled.article`
       max-width: 128px;
       height: 128px;
       z-index: 0;
-
       aspect-ratio: 1;
       border-radius: 999rem;
       /* border: 2px solid ${({ theme }) => theme.colors.secondary[400]}; */

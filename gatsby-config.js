@@ -27,68 +27,6 @@ module.exports = {
     'gatsby-plugin-sass',
 
     {
-      resolve: `gatsby-plugin-webfonts`,
-      options: {
-        fonts: {
-          google2: [
-            {
-              family: `Material+Icons+Round`,
-              text: `abcdefghijklmnopqrstuvwxyz_`,
-              // fontDisplay: 'swap',
-              strategy: 'base64',
-              // strategy: 'cdn',
-            },
-
-            // {
-            //   family: 'Roboto',
-            //   axes: 'wght@300;400;500;600',
-            //   // fontDisplay: 'swap',
-            //   // strategy: 'base64', // 'base64' || 'cdn'
-
-            //   // strategy: 'cdn',
-            // },
-
-            {
-              family: 'Open+Sans',
-              axes: 'wght@300;400;500;600',
-              // fontDisplay: 'swap',
-              // strategy: 'base64', // 'base64' || 'cdn'
-              strategy: 'base64',
-              // strategy: 'cdn',
-            },
-
-            {
-              family: 'Domine',
-              axes: 'wght@400;500',
-              // fontDisplay: 'swap',
-              strategy: 'base64',
-              // strategy: 'cdn',
-            },
-
-            {
-              family: 'Rokkitt',
-              axes: 'wght@300;500',
-              // fontDisplay: 'swap',
-              strategy: 'base64',
-              // strategy: 'cdn',
-            },
-
-            {
-              family: 'Merriweather',
-              axes: 'wght@400',
-              // fontDisplay: 'swap',
-              strategy: 'base64',
-              // strategy: 'cdn',
-            },
-          ],
-        },
-        // useMinify: true,
-        // usePreload: true,
-        // usePreconnect: true,
-      },
-    },
-
-    {
       resolve: 'gatsby-source-prismic',
       options: {
         repositoryName: `${process.env.GATSBY_PRISMIC_REPO_NAME}`,
@@ -213,21 +151,10 @@ module.exports = {
     `gatsby-plugin-netlify`,
 
     {
-      resolve: `gatsby-plugin-google-gtag`,
+      resolve: 'gatsby-plugin-google-tagmanager',
       options: {
-        // You can add multiple tracking ids and a pageview event will be fired for all of them.
-        trackingIds: [
-          'G-V4GEV21FN2', // Google Analytics / GA
-        ],
-
-        // This object is used for configuration specific to this plugin
-        pluginConfig: {
-          // Puts tracking script in the head instead of the body
-          head: true,
-
-          // Avoids sending pageview hits from custom paths
-          exclude: ['/preview/**', '/do-not-track/me/too/'],
-        },
+        id: 'GTM-NJRNL7L',
+        includeInDevelopment: false,
       },
     },
 
