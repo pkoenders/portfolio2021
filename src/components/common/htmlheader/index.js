@@ -7,7 +7,7 @@ const HTMLHeader = ({ currentLang }) => (
     query={`${SEOquery}`}
     render={(data) => {
       const metaTitle = data.site.siteMetadata.title
-
+      // console.log('currentLang = ' + currentLang)
       return (
         <Helmet>
           {/* set lang - default 'en-nz' */}

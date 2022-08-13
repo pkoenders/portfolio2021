@@ -8,11 +8,9 @@ import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
 // import { linkResolver } from '../utils/linkResolver'
 
 const HomeTemplate = ({ data, location }) => {
-  //Validate data for Gastby Build Gatsby Build breaks here for Deleate / createPages  - see  https://github.com/birkir/gatsby-source-prismic-graphql/issues/174
+  //Validate data for Gastby Build Gatsby Build breaks here for Delete / createPages  - see  https://github.com/birkir/gatsby-source-prismic-graphql/issues/174
   const primaryNavData = data.allPrismicMainNavigation.edges.slice(0, 1).pop()
-
   if (!data || !primaryNavData) return null
-
   const document = data.prismicHomepage
 
   const primaryNav = primaryNavData.node.data.nav
@@ -43,7 +41,6 @@ export const query = graphql`
     allPrismicMainNavigation(filter: { lang: { eq: $locale } }) {
       edges {
         node {
-          _previewable
           type
           lang
           id
