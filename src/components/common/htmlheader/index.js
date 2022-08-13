@@ -14,10 +14,9 @@ const HTMLHeader = ({ currentLang }) => (
           <html lang={currentLang ? currentLang : 'en-nz'} />
           {/* set default title */}
           <title>{metaTitle}</title>
-          {/* Google analytics */}
           <meta
             name="google-site-verification"
-            content="OeOzruvqni3pGyA2GZn_UZLmsY8AP8itjoCLA3ncwsY"
+            content="DAiQEMzcJlBMppysBm9TztriuQblYdj_9Rlbi23ddC0"
           />
           {/* Add Google fonts - Pre connect warm-up */}
           <link rel="preconnect" href="https://fonts.googleapis.com" />
