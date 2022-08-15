@@ -150,15 +150,6 @@ module.exports = {
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-netlify`,
 
-    // {
-    //   resolve: 'gatsby-plugin-google-tagmanager',
-    //   options: {
-    //     id: 'GTM-MXS9T2Z',
-    //     includeInDevelopment: false,
-    //     enableWebVitalsTracking: true,
-    //   },
-    // },
-
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
