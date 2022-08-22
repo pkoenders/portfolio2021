@@ -1,14 +1,13 @@
 import { createGlobalStyle } from 'styled-components'
 import reset from 'styled-reset'
+import { light } from './default/themeLightDark'
+import { defaultBase } from './default/themeBase'
 
-import { defaultTheme } from './default/pkoenders'
-// import { darkTheme } from './default/pkoenders-dark'
-
-export const theme = defaultTheme
-// export const typography = defaultTypography
+const _ = require('lodash')
+export const mergeThemes = _.merge(light, defaultBase)
+export const theme = mergeThemes
 
 export const screenSize = theme.screens
-
 export const GlobalStyles = createGlobalStyle`
   ${reset}
   
@@ -20,12 +19,14 @@ export const GlobalStyles = createGlobalStyle`
 
   html {
     box-sizing: border-box; 
-    /* scroll-behavior: smooth; */
-    /* scroll-behavior: initial; */
-    /* scroll-behavior: auto; */
-    scroll-behavior: initial;
+    scroll-behavior: smooth;
     font-family: ${({ theme }) => theme.font.sans};
-    font-size: 100%; /*16px*/
+
+    // Base font sizing
+    // font-size: 100%; /* 16px */
+     font-size: 106.3%; /* 17px */
+    //font-size: 112.5%; /* 18px */
+
     color: ${({ theme }) => theme.colors.page.default};
     font-feature-settings: 'kern', 'liga', 'clig', 'calt';
     -webkit-font-smoothing: antialiased;
@@ -33,7 +34,6 @@ export const GlobalStyles = createGlobalStyle`
     text-rendering: optimizeLegibility;
     word-wrap: break-word;
     font-kerning: normal;
-
   }
 
   body {
@@ -85,15 +85,22 @@ export const GlobalStyles = createGlobalStyle`
   }
   
   section.light {
-    color: ${({ theme }) => theme.colors.page.default};
+    color: ${({ theme }) => theme.colors.pageHold.default};
+    .carousel > * {
+      color: ${({ theme }) => theme.colors.pageHold.default};
+    }
   }
+
    
   section.dark {
-    color: ${({ theme }) => theme.colors.page[100]};
+    color: ${({ theme }) => theme.colors.pageHold[100]};
+
+  
     
     a {
-       color: ${({ theme }) => theme.colors.primary[100]};
+       /* color: ${({ theme }) => theme.colors.primary[100]}; */
     }
+
     form {
       input:focus-visible,
       textarea:focus-visible,
@@ -123,6 +130,7 @@ export const GlobalStyles = createGlobalStyle`
     text-decoration: underline;
     overflow-wrap: break-word;
     word-wrap: break-word;
+    overflow-wrap: anywhere;
     /* hyphens: auto; */
   }
 
@@ -362,7 +370,7 @@ export const GlobalStyles = createGlobalStyle`
 
 
   button {
-    font-size: ${({ theme }) => theme.fontSize.base};
+    /* font-size: ${({ theme }) => theme.fontSize.base}; */
     color: ${({ theme }) => theme.colors.page.default};
     background-color: transparent;  
     /* outline: none; */
@@ -440,14 +448,16 @@ export const GlobalStyles = createGlobalStyle`
   // Bground color options
   // Default
   // Grey 
-  [class^="background-page"],
+
+  /* [class^="background-page"],
   [class*=" background-page"]{
     background-color: ${({ theme }) => theme.colors.page.bground.default}; 
-  }
+  } */
+
    //
    // Page
   .background-page-default {
-    background-color: ${({ theme }) => theme.colors.page.bground.default}; 
+    /* background-color: ${({ theme }) => theme.colors.page.bground.default};  */
   }
   .background-page-100 {
     background-color: ${({ theme }) => theme.colors.page[100]}; 

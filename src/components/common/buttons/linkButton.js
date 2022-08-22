@@ -32,9 +32,9 @@ const BtnWrapper = styled.span`
     padding: 16px ${({ theme }) => theme.padding.default};
     padding: 12px 24px;
     text-align: center;
-    /* text-transform: uppercase; */
     text-decoration: none !important;
-    font-weight: 600;
+    font-variation-settings: 'GRAD' 0;
+    /* font-weight: 600; */
     font-family: inherit;
     line-height: initial;
 
@@ -64,6 +64,7 @@ const BtnWrapper = styled.span`
     flex-direction: row-reverse;
   }
   .btn:hover {
+    font-variation-settings: 'GRAD' 100;
     box-shadow: ${({ theme }) => theme.boxShadow.lg};
 
     i {
