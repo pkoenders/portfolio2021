@@ -95,8 +95,6 @@ export const GlobalStyles = createGlobalStyle`
    
   section.dark {
     color: ${({ theme }) => theme.colors.pageHold[100]};
-
-  
     
     a {
        color: ${({ theme }) => theme.colors.accent.default};
