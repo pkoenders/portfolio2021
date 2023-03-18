@@ -55,6 +55,15 @@ export const light = {
       1100: '#cd1851',
       1200: '#b61548',
       1300: '#9f123f',
+
+      // Tweak list for darkBground
+      darkBground: {
+        default: '#ff73a0',
+      },
+      // Tweak list for lightBground
+      lightBground: {
+        default: '#e41b5b',
+      },
     },
 
     // @Grey
@@ -191,16 +200,6 @@ export const dark = {
       300: '#3b3e45',
       200: '#32363d',
       100: '#292d34',
-      
-       // Tweak list for darkBground
-      darkBground: {
-        default: '#ff73a0',
-      },
-      // Tweak list for lightBground
-      lightBground: {
-        default: '#e41b5b',
-      },
-    },
     },
   },
 }
