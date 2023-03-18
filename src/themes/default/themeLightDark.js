@@ -149,6 +149,23 @@ export const dark = {
       1100: '#e66890',
       1200: '#cc5c80',
       1300: '#b35170',
+
+      // Tweak list for darkBground
+      darkBground: {
+        default: '#ff73a0',
+        100: '#ff81aa',
+        200: '#ff8fb3',
+        300: '#ff9dbd',
+        400: '#ffabc6',
+        500: '#ffb9d0',
+        600: '#ffc7d9',
+        700: '#ffd5e3',
+        800: '#ffe3ec',
+        900: '#fff1f6',
+        1100: '#e66890',
+        1200: '#cc5c80',
+        1300: '#b35170',
+      },
     },
 
     // @Grey
