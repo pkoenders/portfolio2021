@@ -215,7 +215,7 @@ export const GlobalStyles = createGlobalStyle`
   .styledh3 {
     font-size: ${({ theme }) => theme.fontSize['2xl']};
     font-family: ${({ theme }) => theme.font.sans};
-     font-weight: ${({ theme }) => theme.fontWeight.semibold};
+    font-weight: ${({ theme }) => theme.fontWeight.semibold};
     /* line-height: ${({ theme }) => theme.lineHeight.snug}; */
   }
 

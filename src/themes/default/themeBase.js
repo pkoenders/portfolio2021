@@ -28,9 +28,9 @@ export const themeBase = {
 
   font: {
     sans: '"Open Sans", sans-serif',
-    headers: 'Domine, serif',
+    headers: '"Roboto Serif", serif',
     mono: ['Menlo', 'Monaco', 'Consolas', '"Liberation Mono"', '"Courier New"', 'monospace'],
-    serif: 'Merriweather, serif',
+    serif: '"Roboto Serif", serif',
   },
 
   // use https://type-scale.com/ to generate font sizes
