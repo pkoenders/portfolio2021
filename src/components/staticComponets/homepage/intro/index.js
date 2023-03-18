@@ -260,16 +260,10 @@ const Intro = () => {
           <div className="part4">
             <span>
               <Icon icon={'design_services'} useRef={iconRef} />
-              {/* <i className="material-icons-round" aria-hidden="true" ref={iconRef}>
-              design_services
-            </i> */}
               <ul>
                 <li>Implementation of the UI/UX design process</li>
-                {/* <li>Estimating &amp; proposal review</li> */}
                 <li>Iterative wire-framing, design systems &amp; prototypes</li>
-                {/* <li>Build &amp; maintain design systems</li> */}
                 <li>HTML components, React &amp; Headless CMS's</li>
-                {/* <li>Graphic design</li> */}
               </ul>
             </span>
           </div>
