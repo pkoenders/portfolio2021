@@ -24,10 +24,7 @@ const IntroSection = styled.section`
     margin: auto;
     padding: 0 ${({ theme }) => theme.padding['1/2']};
     text-align: center;
-    /* font-size: 120%; */
-    /* font-weight: 600; */
     color: ${({ theme }) => theme.colors.pageHold[100]};
-    /* color: #cff0e0; */
     span {
       display: contents;
     }
@@ -220,9 +217,6 @@ const Intro = () => {
           <div className="part1">
             <span>
               <Icon icon={'follow_the_signs'} useRef={iconRef} />
-              {/* <i className="material-icons-round" aria-hidden="true" ref={iconRef}>
-              follow_the_signs
-            </i> */}
               <p>
                 I'm a UI/UX designer &amp; developer, originally from a traditional Graphic Design
                 background and transitioned into Digital and Web Design.
@@ -233,9 +227,6 @@ const Intro = () => {
           <div className="part2">
             <span>
               <Icon icon={'accessibility_new'} useRef={iconRef} />
-              {/* <i className="material-icons-round" aria-hidden="true" ref={iconRef}>
-              accessibility_new
-            </i> */}
               <p>
                 I support digital accessibility, am curious and enjoy working with creative and
                 development teams.
@@ -246,10 +237,6 @@ const Intro = () => {
           <div className="part3">
             <span>
               <Icon icon={'favorite_border'} useRef={iconRef} />
-              {/* <i className="material-icons-round" aria-hidden="true" ref={iconRef}>
-              favorite_border
-            </i> */}
-              {/* <IconDevelopment /> */}
               <p>
                 I take pride in my craft. I collaboratively plan, design, and deliver optimised
                 digital solutions with best practices, professionalism, integrity and care.
