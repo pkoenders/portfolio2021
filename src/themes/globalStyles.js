@@ -99,7 +99,7 @@ export const GlobalStyles = createGlobalStyle`
   
     
     a {
-       /* color: ${({ theme }) => theme.colors.primary[100]}; */
+       color: ${({ theme }) => theme.colors.pageHold.accent.default};
     }
 
     form {
