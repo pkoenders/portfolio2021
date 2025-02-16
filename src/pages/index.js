@@ -20,7 +20,7 @@ const HomeTemplate = ({ theme, data, location }) => {
 
   return (
     <Layout currentLang={currentLang} primaryNav={primaryNav}>
-      {/* <HTMLHeader currentLang={currentLang} /> */}
+      <HTMLHeader currentLang={currentLang} />
       <SeoZone seoZone={document.data.body1} />
       <SliceZone location={location} sliceZone={document.data.body} />
     </Layout>
