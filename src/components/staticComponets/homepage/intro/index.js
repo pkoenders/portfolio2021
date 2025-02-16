@@ -249,8 +249,7 @@ const Intro = () => {
               <Icon icon={'design_services'} useRef={iconRef} />
               <ul>
                 <li>Implementation of the UI/UX design process</li>
-                <li>Iterative wire-framing, design systems &amp; prototypes</li>
-                <li>HTML components, React &amp; Headless CMS's</li>
+                <li>Design systems &amp; prototyping</li>
               </ul>
             </span>
           </div>
