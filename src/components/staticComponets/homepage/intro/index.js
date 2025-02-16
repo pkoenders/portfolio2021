@@ -255,7 +255,7 @@ const Intro = () => {
           </div>
         </article>
       </div>
-      <div className="resume">
+      {/* <div className="resume">
         <Button
           buttonLabel={'My resumé'}
           buttonType={'Static'}
@@ -264,7 +264,7 @@ const Intro = () => {
           // buttonIcon={'article'}
           // buttonIconAlign={'right'}
         />
-      </div>
+      </div> */}
     </IntroSection>
   )
 }
