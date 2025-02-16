@@ -10,8 +10,8 @@ Components['HomepageApproach'] =
 // Style guide
 Components['Styleguide'] = require('/src/components/staticComponets/styleGuide/').default
 
-// Lghthouse scores table
-Components['LighthouseScores'] =
-  require('/src/components/staticComponets/tables/lighthouseScores/').default
+// // Lghthouse scores table
+// Components['LighthouseScores'] =
+//   require('/src/components/staticComponets/tables/lighthouseScores/').default
 
 export default Components
