@@ -822,7 +822,7 @@ class Header extends Component {
       for (var i = 0; i < secondaryNavBtn.length; ++i) {
         secondaryNavBtn[i].classList.remove('isActive')
         secondaryNavBtn[i].setAttribute('aria-expanded', 'false')
-        secondaryNavList[i].setAttribute('style', 'display: none;')
+        // secondaryNavList[i].setAttribute('style', 'display: none;')
 
         // handleCloseSecondaryNavAria(secondaryNavBtn[i])
       }

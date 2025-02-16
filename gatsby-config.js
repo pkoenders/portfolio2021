@@ -12,7 +12,7 @@ module.exports = {
     defaultImage: '/static/android-chrome-512x512.png', // Path to your image you placed in the 'static' folder
     logo: '/static/android-chrome-512x512.png', // Used for SEO
     author: 'Peter Koenders',
-    year: '2022',
+    year: '2025',
   },
 
   flags: {

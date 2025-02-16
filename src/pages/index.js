@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
-import Layout from '/src/components/layout'
+import Layout from '/src/components/layout-homepage'
 import HTMLHeader from '/src/components/common/htmlheader/'
 import SeoZone from '/src/components/slices/seoZone'
 import SliceZone from '/src/components/slices/sliceZone'

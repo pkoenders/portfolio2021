@@ -227,10 +227,7 @@ const Intro = () => {
           <div className="part2">
             <span>
               <Icon icon={'accessibility_new'} useRef={iconRef} />
-              <p>
-                I support digital accessibility, am curious and enjoy working with creative and
-                development teams.
-              </p>
+              <p>I ensure digital accessibility is baked into design.</p>
             </span>
           </div>
 
@@ -239,7 +236,7 @@ const Intro = () => {
               <Icon icon={'favorite_border'} useRef={iconRef} />
               <p>
                 I take pride in my craft. I collaboratively plan, design, and deliver optimised
-                digital solutions with best practices, professionalism, integrity and care.
+                prototypes with best practices, professionalism, integrity and care.
               </p>
             </span>
           </div>
@@ -249,7 +246,7 @@ const Intro = () => {
               <Icon icon={'design_services'} useRef={iconRef} />
               <ul>
                 <li>Implementation of the UI/UX design process</li>
-                <li>Design systems &amp; prototyping</li>
+                <li>Figma Enterprise, design systems @ 4+ modes &amp; prototyping</li>
               </ul>
             </span>
           </div>

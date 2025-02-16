@@ -64,9 +64,9 @@ const Footer = ({ currentLang, currentPrefix }) => {
   // `)
 
   return (
-    <FooterWrapper>
+    <FooterWrapper className="footerWrapper">
       <nav aria-label="Footer navigation">
-        <ScrollToTop />
+        {/* <ScrollToTop /> */}
         <p>
           {/* © {new Date().getFullYear()} - {i18n[currentLang].siteTitle} */}©{' '}
           {new Date().getFullYear()} — Peter Koenders

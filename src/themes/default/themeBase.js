@@ -27,8 +27,8 @@ export const themeBase = {
   },
 
   font: {
-    sans: '"Open Sans", sans-serif',
-    headers: '"Roboto Serif", serif',
+    sans: '"Noto Sans", sans-serif',
+    headers: '"Noto Sans", sans-serif',
     mono: ['Menlo', 'Monaco', 'Consolas', '"Liberation Mono"', '"Courier New"', 'monospace'],
     serif: '"Roboto Serif", serif',
   },

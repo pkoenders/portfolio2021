@@ -136,7 +136,7 @@ const HeroImage = styled.section.attrs({
         padding: ${({ theme }) => theme.padding['1/2']} ${({ theme }) => theme.padding.default};
         color: #ffffff;
         background-color: ${({ theme }) => theme.colors.header.default};
-        border-radius: ${({ theme }) => theme.borderRadius.default};
+        border-radius: ${({ theme }) => theme.borderRadius.lg};
         overflow-wrap: break-word;
         word-wrap: break-word;
         hyphens: none;
@@ -250,22 +250,28 @@ const HeroImg = ({ slice }) => {
     var overlayTo = getColor(slice.primary.overlay_to)
 
     // The styled color of header bground to use on content background & gradients if not specified
-    var headerWrapper = document.querySelector('.headerNavWrapper')
-    var headerBgColor = window
-      .getComputedStyle(headerWrapper, null)
+    // var headerWrapper = document.querySelector('.headerNavWrapper')
+    // var headerBgColor = window
+    //   .getComputedStyle(headerWrapper, null)
+    //   .getPropertyValue('background-color')
+
+    // The styled color of footer bground to use on content background & gradients if not specified
+    var footerWrapper = document.querySelector('.footerWrapper')
+    var footerBgColor = window
+      .getComputedStyle(footerWrapper, null)
       .getPropertyValue('background-color')
 
-    // Convert headerBgColor color to #hex
-    headerBgColor = getRgb2Hex(headerBgColor)
+    // Convert footerBgColor color to #hex
+    footerBgColor = getRgb2Hex(footerBgColor)
 
     // If spcecified color - set to the styled color else set the header bground color
     // We are going to write a gradient in any case. Null or transparent will have 0 opacity
     // Content editors can just add opacity and no color, the default color will be the header color
     if (overlayFrom === null || overlayFrom === 'transparent') {
-      overlayFrom = headerBgColor
+      overlayFrom = footerBgColor
     }
     if (overlayTo === null || overlayTo === 'transparent') {
-      overlayTo = headerBgColor
+      overlayTo = footerBgColor
     }
 
     // Overlay opacity values
