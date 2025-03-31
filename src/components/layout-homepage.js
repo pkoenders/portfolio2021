@@ -122,14 +122,14 @@ class LayoutHomepage extends React.Component {
       <ThemeProvider theme={isLightTheme ? light : dark}>
         <GlobalStyles />
         <LayoutWrapper>
-          {/* <Header
+          <Header
             currentLang={currentLang}
             currentPrefix={currentPrefix}
             currentPath={currentPath}
             primaryNav={primaryNav}
             changeTheme={this.changeTheme}
             currTheme={isLightTheme}
-          /> */}
+          />
           <div className="layoutInner">
             <main
               id="main"
