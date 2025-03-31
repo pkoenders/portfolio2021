@@ -34,7 +34,7 @@ const LayoutWrapper = styled.div`
       min-width: 320px;
 
       section.section-layout:first-child {
-        /* margin-top: 60px; */
+        margin-top: 60px;
       }
 
       section.section-layout.heroBanner:first-child {

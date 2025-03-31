@@ -5,7 +5,7 @@ import { gsap, Bounce } from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
 
 // Page components
-import Button from '/src/components/common/buttons/linkButton'
+// import Button from '/src/components/common/buttons/linkButton'
 import Icon from '/src/components/common/icons/material'
 
 import styled from 'styled-components'

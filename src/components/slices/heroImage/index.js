@@ -136,7 +136,7 @@ const HeroImage = styled.section.attrs({
         padding: ${({ theme }) => theme.padding['1/2']} ${({ theme }) => theme.padding.default};
         color: #ffffff;
         background-color: ${({ theme }) => theme.colors.header.default};
-        border-radius: ${({ theme }) => theme.borderRadius.lg};
+        border-radius: ${({ theme }) => theme.borderRadius.xlg};
         overflow-wrap: break-word;
         word-wrap: break-word;
         hyphens: none;
