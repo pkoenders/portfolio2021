@@ -218,8 +218,8 @@ const Intro = () => {
             <span>
               <Icon icon={'follow_the_signs'} useRef={iconRef} />
               <p>
-                I'm a UI/UX designer &amp; developer, originally from a traditional Graphic Design
-                background and transitioned into Digital and Web Design.
+                I’m a UI/UX designer. I originally came from a traditional graphic design background
+                and transitioned into digital UI design.
               </p>
             </span>
           </div>
@@ -236,7 +236,7 @@ const Intro = () => {
               <Icon icon={'favorite_border'} useRef={iconRef} />
               <p>
                 I take pride in my craft. I collaboratively plan, design, and deliver optimised
-                prototypes with best practices, professionalism, integrity and care.
+                digital solutions with best practices, professionalism, integrity and care.
               </p>
             </span>
           </div>
@@ -245,8 +245,8 @@ const Intro = () => {
             <span>
               <Icon icon={'design_services'} useRef={iconRef} />
               <ul>
-                <li>Implementation of the UI/UX design process</li>
-                <li>Figma Enterprise, design systems @ 4+ modes &amp; prototyping</li>
+                <li>UI design & prototyping</li>
+                <li>Build & manage design systems</li>
               </ul>
             </span>
           </div>
