@@ -7,8 +7,8 @@ import { ThemeProvider } from 'styled-components'
 import { lightTheme, darkTheme } from '/src/themes/themeMerger'
 import { GlobalStyles } from '/src/themes/globalStyles'
 
-const light = lightTheme
 const dark = darkTheme
+const light = lightTheme
 
 const LayoutWrapper = styled.div`
   display: flex;
@@ -71,11 +71,11 @@ class LayoutHomepage extends React.Component {
     // console.log('savedTheme = ' + savedTheme)
 
     const prefersDark =
-      window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
-    if (savedTheme && ['light'].includes(savedTheme)) {
-      localStorage.setItem('storedTheme', 'light')
-    } else if (prefersDark) {
+      window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches
+    if (savedTheme && ['dark'].includes(savedTheme)) {
       localStorage.setItem('storedTheme', 'dark')
+    } else if (prefersDark) {
+      localStorage.setItem('storedTheme', 'light')
     }
   }
 

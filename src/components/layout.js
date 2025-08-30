@@ -70,11 +70,11 @@ class Layout extends React.Component {
     // console.log('savedTheme = ' + savedTheme)
 
     const prefersDark =
-      window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
-    if (savedTheme && ['light'].includes(savedTheme)) {
-      localStorage.setItem('storedTheme', 'light')
-    } else if (prefersDark) {
+      window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches
+    if (savedTheme && ['dark'].includes(savedTheme)) {
       localStorage.setItem('storedTheme', 'dark')
+    } else if (prefersDark) {
+      localStorage.setItem('storedTheme', 'light')
     }
   }
 
