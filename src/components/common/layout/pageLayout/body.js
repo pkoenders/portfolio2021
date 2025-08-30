@@ -11,7 +11,7 @@ const PageBody = styled.article`
     grid-gap: ${({ theme }) => theme.padding.default};
     padding: ${({ theme }) => theme.padding.default} 0;
     color: ${({ theme }) => theme.colors.page.default};
-    margin: ${({ theme }) => theme.margin.default} 0;
+    //margin: ${({ theme }) => theme.margin.default} 0;
     font-weight: ${({ theme }) => theme.fontWeight.semibold};
   }
 
