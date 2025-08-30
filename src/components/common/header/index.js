@@ -29,6 +29,7 @@ const HeaderWrapper = styled.header`
   /* background-color: transparent; */
   background-color: ${({ theme }) => theme.colors.header.default};
 
+
   .skipNav {
     position: absolute;
     top: -1000rem;

@@ -55,7 +55,9 @@ export const themeBaseColors = {
       text: {
         default: '#e6e6e7',
       },
-      default: '#0a031f',
+      //default: '#0a031f',
+
+      default: '#181818',
       50: '#0c0b0fBF',
       100: '#e6e6e7',
       200: '#cececf',
@@ -76,7 +78,7 @@ export const themeBaseColors = {
       text: {
         default: '#e6e6e7',
       },
-      default: '#0a031f',
+      default: '#181818',
       50: '#0c0b0fBF',
       100: '#e6e6e7',
       200: '#cececf',

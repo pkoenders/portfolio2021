@@ -8,6 +8,7 @@ const FilterWrapper = styled.div`
 
   background-color: ${({ theme }) => theme.colors.tertiary[100]};
   background-color: ${({ theme }) => theme.colors.header.default};
+  border-bottom: 1px solid #2b2b2b;
   // background-color: #000;
   display: flex;
   flex-direction: column;
