@@ -40,6 +40,12 @@ export const light = {
       },
     },
 
+    // @defaultLink
+    link: {
+      default: '#0000EE',
+      border: '#0000EE',
+    },
+
     // @Accent
     accent: {
       default: '#e41b5b',
@@ -140,6 +146,11 @@ export const dark = {
       bground: {
         default: '#151a1e',
       },
+    },
+
+    link: {
+      default: '#fff',
+      border: '#fff',
     },
 
     // @Accent

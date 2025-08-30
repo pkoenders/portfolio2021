@@ -23,11 +23,12 @@ const LayoutWrapper = styled.div`
     flex-grow: 1;
     overflow-x: hidden;
     display: flex;
-    background-color: #070809;
+    /* background-color: #070809; */
 
     main {
       display: flex;
       flex-direction: column;
+      /* vertical-align: top; */
       margin: 0 auto;
       z-index: 1;
       flex-grow: 1;

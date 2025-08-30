@@ -157,10 +157,9 @@ export const query = graphql`
                 layout: CONSTRAINED
                 placeholder: BLURRED
                 imgixParams: {
-                  q: 90
+                  q: 100
                   fm: "jpg, avif, webp"
                   nr: 0
-                  nrs: 50
                   dpr: 2
                   auto: "compress,enhance,format"
                 }
@@ -178,9 +177,9 @@ export const query = graphql`
                       layout: CONSTRAINED
                       placeholder: BLURRED
                       imgixParams: {
-                        q: 90
+                        q: 100
                         fm: "jpg, avif, webp"
-                        nr: 100
+                        nr: 0
                         dpr: 2
                         auto: "compress,enhance,format"
                       }

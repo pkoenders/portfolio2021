@@ -31,9 +31,23 @@ const GalleryItem = ({ currentLang, itemData }) => {
       <div>
         <PageBody className="content">
           {title && <h1>{title}</h1>}
+          {date && <time>{date}</time>}
+          {link && (
+            <a
+              href={link}
+              target="_blank"
+              aria-describedby="Open link in a new window"
+              rel="noreferrer"
+              className="url visit"
+            >
+              {link}
+              <IconMaterial icon={'open_in_new'} />
+            </a>
+          )}
           <div>
-            <div className="galleryContent">
-              {date && <time>{date}</time>}
+            {content && (
+              <div className="galleryContent">
+                {/* {date && <time>{date}</time>}
               {link && (
                 <a
                   href={link}
@@ -42,12 +56,13 @@ const GalleryItem = ({ currentLang, itemData }) => {
                   rel="noreferrer"
                   className="visit"
                 >
-                  <IconMaterial icon={'open_in_new'} />
                   {link}
+                  <IconMaterial icon={'open_in_new'} />
                 </a>
-              )}
-              {content && <RichText render={content} linkResolver={linkResolver} />}
-            </div>
+              )} */}
+                <RichText render={content} linkResolver={linkResolver} />
+              </div>
+            )}
             <aside className="galleryImgs">
               {mainImage && (
                 <Zoom zoomMargin={32}>

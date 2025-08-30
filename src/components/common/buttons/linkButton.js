@@ -76,6 +76,8 @@ const BtnWrapper = styled.span`
     color: #000000;
     background-color: ${({ theme }) => theme.colors.primary.default};
     border: 1px solid ${({ theme }) => theme.colors.primary[1200]};
+    border: 1px solid #fff;
+    border-radius: 1000px;
     i {
       color: inherit;
     }
@@ -101,6 +103,11 @@ const BtnWrapper = styled.span`
     color: ${({ theme }) => theme.colors.grey.default};
     background-color: ${({ theme }) => theme.colors.grey[100]};
     border: 1px solid ${({ theme }) => theme.colors.grey[200]};
+    font-size: ${({ theme }) => theme.fontSize.lg};
+
+    font-weight: ${({ theme }) => theme.fontWeight.semibold};
+
+    border-radius: 1000px;
     i {
       color: inherit;
     }

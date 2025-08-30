@@ -133,7 +133,7 @@ const HeroImage = styled.section.attrs({
         height: fit-content;
         display: grid;
         grid-gap: ${({ theme }) => theme.padding.default};
-        padding: ${({ theme }) => theme.padding['1/2']} ${({ theme }) => theme.padding.default};
+        padding: ${({ theme }) => theme.padding['2xl']} ${({ theme }) => theme.padding.default};
         color: #ffffff;
         background-color: ${({ theme }) => theme.colors.header.default};
         border-radius: ${({ theme }) => theme.borderRadius.xlg};
@@ -142,7 +142,7 @@ const HeroImage = styled.section.attrs({
         hyphens: none;
 
         @media (max-width: ${({ theme }) => theme.screens.sm}) {
-          padding: ${({ theme }) => theme.padding['1/2']};
+          padding: ${({ theme }) => theme.padding['2xl']};
         }
       }
 

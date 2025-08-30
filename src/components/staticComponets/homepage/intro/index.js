@@ -6,30 +6,57 @@ import { ScrollTrigger } from 'gsap/all'
 
 // Page components
 // import Button from '/src/components/common/buttons/linkButton'
-import Icon from '/src/components/common/icons/material'
+//import Icon from '/src/components/common/icons/material'
 
 import styled from 'styled-components'
 
 const IntroSection = styled.section`
-  background: rgb(7, 8, 9);
-  background: linear-gradient(180deg, rgba(7, 8, 9, 1) 0%, rgba(10, 3, 31, 1) 100%);
-  padding: ${({ theme }) => theme.padding['4xl']} 0 ${({ theme }) => theme.padding['2xl']};
+  // background: rgb(7, 8, 9);
+  //background: linear-gradient(180deg, rgba(7, 8, 9, 1) 0%, rgba(10, 3, 31, 1) 100%);
+  padding: ${({ theme }) => theme.padding['4xl']} 0 ${({ theme }) => theme.padding['4xl']};
   display: flex;
   flex-direction: column;
   grid-gap: ${({ theme }) => theme.padding['2xl']};
   z-index: 999;
+  height: 100%;
 
   .title {
     display: flex;
     margin: auto;
     padding: 0 ${({ theme }) => theme.padding['1/2']};
     text-align: center;
-    color: ${({ theme }) => theme.colors.pageHold[100]};
+    /* color: ${({ theme }) => theme.colors.pageHold[100]}; */
+    color: ${({ theme }) => theme.colors.page.default};
     span {
       display: contents;
     }
   }
 
+  .professionalSummary {
+    padding: 0 ${({ theme }) => theme.padding['1/2']};
+    width: 66%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+    grid-row-gap: ${({ theme }) => theme.padding['1/2']};
+    /* align-items: stretch; */
+    overflow: hidden;
+    /* color: ${({ theme }) => theme.colors.pageHold[100]}; */
+    color: ${({ theme }) => theme.colors.page.default};
+    @media (max-width: ${({ theme }) => theme.screens.md}) {
+      width: 100%;
+      //padding: 0 ${({ theme }) => theme.padding['1/2']};
+    }
+    p.intro,
+    li {
+      color: ${({ theme }) => theme.colors.page.default};
+
+      font-size: ${({ theme }) => theme.fontSize.lg};
+      font-weight: ${({ theme }) => theme.fontWeight.semibold};
+    }
+  }
   .intro {
     padding: 0;
     width: 100%;
@@ -40,6 +67,7 @@ const IntroSection = styled.section`
     grid-row-gap: ${({ theme }) => theme.padding['4xl']};
     align-items: stretch;
     overflow: hidden;
+    color: ${({ theme }) => theme.colors.pageHold[100]};
 
     div {
       /* padding: ${({ theme }) => theme.padding.default}; */
@@ -49,7 +77,7 @@ const IntroSection = styled.section`
       align-items: stretch;
       display: flex;
       flex-direction: column;
-      grid-gap: ;
+      /* grid-gap: ; */
       position: relative;
 
       @media (max-width: ${({ theme }) => theme.screens.sm}) {
@@ -213,7 +241,29 @@ const Intro = () => {
         <span lang="mi">Tēnā koe</span>, welcome to my portfolio.
       </h2> */}
       <div>
-        <article className="intro">
+        <div className="professionalSummary">
+          <p className="intro">
+            I’m a UX/UI Designer with over 20 years of experience creating user-centred, accessible,
+            and scalable digital products. My work spans government, corporate, and non-profit
+            sectors, where I specialise in building design systems, simplifying complex experiences,
+            and embedding accessibility into every stage of the design process.
+          </p>
+
+          <p>
+            I bring together strong UX/UI design expertise with front-end development knowledge,
+            helping teams deliver solutions that are not only visually consistent but also inclusive
+            and practical to implement. From leading design system adoption in large organisations
+            to designing intuitive interfaces for services with diverse user needs, I focus on
+            creating digital experiences that are clear, accessible, and meaningful.
+          </p>
+
+          <p>
+            This portfolio highlights some of the projects where I’ve applied design thinking,
+            collaboration, and accessibility-first practices to deliver outcomes that improve both
+            user and organisational experiences.
+          </p>
+        </div>
+        {/* <article className="intro">
           <div className="part1">
             <span>
               <Icon icon={'follow_the_signs'} useRef={iconRef} />
@@ -250,7 +300,7 @@ const Intro = () => {
               </ul>
             </span>
           </div>
-        </article>
+        </article> */}
       </div>
       {/* <div className="resume">
         <Button

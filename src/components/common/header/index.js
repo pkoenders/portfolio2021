@@ -9,7 +9,7 @@ import linkResolver from '/src/utils/linkResolver'
 import IconMaterial from '/src/components/common/icons/material'
 
 // Layout
-import Brand from '/src/components/common/brand/'
+import ProfileImg from '/src/components/common/brand/profile-img'
 // import LocaleSwitcher from './localeSwitcher/'
 import ThemeSwitcher from '/src/components/common/header/themeSwitcher/'
 
@@ -130,6 +130,16 @@ const HeaderWrapper = styled.header`
             height: 24px;
           }
         }
+        img {
+          max-height: fit-content;
+          // height: ${({ theme }) => theme.padding.default};
+          // height: 56px;
+          border-radius: 1000px;
+          // border: 1px #fff solid;
+          @media (max-width: ${({ theme }) => theme.screens.sm}) {
+            height: 24px;
+          }
+        }
       }
       @media (max-width: ${({ theme }) => theme.screens.sm}) {
         position: absolute;
@@ -142,7 +152,8 @@ const HeaderWrapper = styled.header`
         right: auto;
       }
 
-      svg {
+      svg,
+      img {
         width: auto;
       }
     }
@@ -914,7 +925,7 @@ class Header extends Component {
                 aria-label={i18n[this.props.currentLang].linkToHomepage}
                 className="l1"
               >
-                <Brand currentLang={this.props.currentLang} />
+                <ProfileImg />
               </Link>
             </li>
 

@@ -89,7 +89,7 @@ export const GlobalStyles = createGlobalStyle`
     color: ${({ theme }) => theme.colors.pageHold.default};
 
      a {
-       color: ${({ theme }) => theme.colors.accent.lightBground.default};
+       color: ${({ theme }) => theme.colors.link.default};
     }
     
     .carousel > * {
@@ -102,7 +102,8 @@ export const GlobalStyles = createGlobalStyle`
     color: ${({ theme }) => theme.colors.pageHold[100]};
     
     a {
-       color: ${({ theme }) => theme.colors.accent.darkBground.default};
+       color: ${({ theme }) => theme.colors.link.default};
+        /* color: #0000EE; */
     }
 
     form {
@@ -129,7 +130,8 @@ export const GlobalStyles = createGlobalStyle`
   a:link,
   a:hover,
   a:visited {
-    color: ${({ theme }) => theme.colors.accent.default};
+   color: ${({ theme }) => theme.colors.link.default};
+   // color: #0000EE;
     /* text-decoration: none; */
     text-decoration: underline;
     overflow-wrap: break-word;
@@ -140,15 +142,18 @@ export const GlobalStyles = createGlobalStyle`
 
   a:hover {
     text-decoration: underline;
+    // border-bottom: 2px solid ${({ theme }) => theme.colors.link.border};
   }
 
-  .visit {
+  .url {
     text-decoration: none !important;
-    border-bottom: 1px solid transparent !important;
+    border-bottom: 2px solid transparent !important;
   }
 
-  .visit:hover {
-    border-bottom: 1px solid ${({ theme }) => theme.colors.accent.default} !important;
+  .url:hover {
+    /* border-bottom: 1px solid ${({ theme }) => theme.colors.accent.default} !important; */
+     border-bottom: 2px solid ${({ theme }) => theme.colors.link.border} !important;
+    /* color: #0000EE; */
   }
 
 

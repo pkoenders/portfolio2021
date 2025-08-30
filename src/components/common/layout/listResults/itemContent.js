@@ -26,7 +26,7 @@ const ItemContent = styled.article`
       /* aspect-ratio: 5/4; */
       /* aspect-ratio: auto; */
       object-fit: cover;
-      transform: scale(1.033);
+      //transform: scale(1.033);
       object-position: center top;
     }
   }
@@ -63,7 +63,6 @@ const ItemContent = styled.article`
       margin: 0;
       i {
         color: inherit;
-        color: ${({ theme }) => theme.colors.accent.default};
         position: inherit;
         transition: ${({ theme }) => theme.transition.easeIn.default};
         right: 0px;
@@ -109,7 +108,8 @@ const ItemContent = styled.article`
 
       i {
         margin-top: ${({ theme }) => theme.margin['1/16']};
-        color: ${({ theme }) => theme.colors.secondary.default};
+        /* color: ${({ theme }) => theme.colors.secondary.default}; */
+        color: ${({ theme }) => theme.colors.link.default};
       }
       .strike {
         text-decoration: line-through;
@@ -138,8 +138,9 @@ const ItemContent = styled.article`
 
   &:hover {
     text-decoration: none;
-    border-color: ${({ theme }) => theme.colors.primary[600]};
+    border-color: ${({ theme }) => theme.colors.primary.default};
     box-shadow: ${({ theme }) => theme.boxShadow.lg};
+    //border: 2px solid;
     .imageWrapper {
       img {
         transform: scale(1);
@@ -154,7 +155,8 @@ const ItemContent = styled.article`
         i {
           right: -${({ theme }) => theme.padding['1/8']};
           transition: ${({ theme }) => theme.transition.easeOut.default};
-          color: ${({ theme }) => theme.colors.accent.default};
+          /* color: ${({ theme }) => theme.colors.accent.default}; */
+          // color: ${({ theme }) => theme.colors.link.default};
         }
       }
     }
@@ -186,7 +188,7 @@ const ItemContent = styled.article`
     .imageWrapper {
       cursor: zoom-in;
       .openLightBox {
-        transform: scale(1.25);
+        // transform: scale(1.25);
         display: flex;
         pointer-events: none;
         align-items: center;
@@ -219,7 +221,7 @@ const ItemContent = styled.article`
         transform: scale(1);
       }
       img:hover {
-        transform: scale(1.022);
+        // transform: scale(1.022);
       }
     }
     .imageWrapper:hover {
@@ -447,6 +449,7 @@ const ItemContent = styled.article`
         width: 100%;
         i {
           margin-left: auto;
+          color: ${({ theme }) => theme.colors.link.default};
         }
       }
 
