@@ -7,8 +7,8 @@ import { ThemeProvider } from 'styled-components'
 import { lightTheme, darkTheme } from '/src/themes/themeMerger'
 import { GlobalStyles } from '/src/themes/globalStyles'
 
-const light = lightTheme
 const dark = darkTheme
+const light = lightTheme
 
 const LayoutWrapper = styled.div`
   display: flex;

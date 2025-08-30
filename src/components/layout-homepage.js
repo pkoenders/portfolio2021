@@ -23,7 +23,6 @@ const LayoutWrapper = styled.div`
     flex-grow: 1;
     overflow-x: hidden;
     display: flex;
-    /* background-color: #070809; */
 
     main {
       display: flex;
