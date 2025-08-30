@@ -81,6 +81,7 @@ const BtnWrapper = styled.span`
 
     font-weight: ${({ theme }) => theme.fontWeight.semibold};
     border-radius: 1000px;
+    box-shadow: ${({ theme }) => theme.boxShadow.xl};
     i {
       color: inherit;
     }
