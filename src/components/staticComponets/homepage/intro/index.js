@@ -52,9 +52,9 @@ const IntroSection = styled.section`
     p.intro,
     li {
       color: ${({ theme }) => theme.colors.page.default};
-
-      font-size: ${({ theme }) => theme.fontSize.lg};
-      font-weight: ${({ theme }) => theme.fontWeight.semibold};
+    }
+    ul {
+      margin-bottom: 0px;
     }
   }
   .intro {
@@ -67,7 +67,10 @@ const IntroSection = styled.section`
     grid-row-gap: ${({ theme }) => theme.padding['4xl']};
     align-items: stretch;
     overflow: hidden;
-    color: ${({ theme }) => theme.colors.pageHold[100]};
+    // color: ${({ theme }) => theme.colors.pageHold[100]};
+
+    font-size: ${({ theme }) => theme.fontSize.lg};
+    font-weight: ${({ theme }) => theme.fontWeight.semibold};
 
     div {
       /* padding: ${({ theme }) => theme.padding.default}; */
@@ -243,24 +246,40 @@ const Intro = () => {
       <div>
         <div className="professionalSummary">
           <p className="intro">
-            I’m a UX/UI Designer with over 20 years of experience creating user-centred, accessible,
-            and scalable digital products. My work spans government, corporate, and non-profit
-            sectors, where I specialise in building design systems, simplifying complex experiences,
-            and embedding accessibility into every stage of the design process.
+            I'm a UX/UI Designer with over 20 years experience designing accessible, user-centred
+            digital products for government, corporate, and non-profit organisations. My work
+            focuses on creating scalable design systems, embedding accessibility by design, and
+            delivering inclusive digital services that improve real outcomes for people.
           </p>
 
           <p>
-            I bring together strong UX/UI design expertise with front-end development knowledge,
-            helping teams deliver solutions that are not only visually consistent but also inclusive
-            and practical to implement. From leading design system adoption in large organisations
-            to designing intuitive interfaces for services with diverse user needs, I focus on
-            creating digital experiences that are clear, accessible, and meaningful.
+            I specialise in simplifying complexity — whether that's making dense information easier
+            to navigate, standardising design systems across large organisations, or helping teams
+            collaborate more effectively in Figma. My approach combines evidence-based design,
+            accessibility standards, and close collaboration with stakeholders to deliver intuitive,
+            consistent, and meaningful experiences.
           </p>
 
           <p>
-            This portfolio highlights some of the projects where I’ve applied design thinking,
-            collaboration, and accessibility-first practices to deliver outcomes that improve both
-            user and organisational experiences.
+            This portfolio showcases selected projects where I’ve led or contributed to:
+            <ul>
+              <li>
+                Developing design systems and reusable components to improve efficiency and quality
+              </li>
+              <li>
+                Redesigning websites and applications with a focus on accessibility and usability
+              </li>
+              <li>Introducing tools and practices that strengthen collaboration across teams</li>
+              <li>
+                Creating inclusive interfaces that reflect cultural identity and meet diverse access
+                needs
+              </li>
+            </ul>
+          </p>
+
+          <p>
+            Every project is guided by a belief that digital services should be accessible,
+            inclusive, and empowering for all users.
           </p>
         </div>
         {/* <article className="intro">

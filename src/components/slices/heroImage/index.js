@@ -134,7 +134,8 @@ const HeroImage = styled.section.attrs({
         display: grid;
         grid-gap: ${({ theme }) => theme.padding.default};
         padding: ${({ theme }) => theme.padding['2xl']} ${({ theme }) => theme.padding.default};
-        color: #ffffff;
+        //color: #ffffff;
+        color: ${({ theme }) => theme.colors.pageHold.default};
         background-color: ${({ theme }) => theme.colors.header.default};
         border-radius: ${({ theme }) => theme.borderRadius.xlg};
         overflow-wrap: break-word;
