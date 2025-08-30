@@ -33,8 +33,9 @@ const Switcher = styled.button`
       font-size: 22px;
     }
     .dark {
-      margin: 0;
-      margin-right: 6px;
+      margin-left: 8px;
+      //margin: 0;
+      // margin-right: 6px;
     }
   }
 `
@@ -48,7 +49,7 @@ const ThemeSwitcher = ({ changeTheme, currTheme }) => {
         </span>
       ) : (
         <span aria-label="Dark mode" role="img">
-          <span className="dark">🌜</span>Dark
+          Dark<span className="dark">🌜</span>
         </span>
       )}
     </Switcher>
