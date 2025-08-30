@@ -312,6 +312,7 @@ const HeroImg = ({ slice }) => {
         background-position: center ${alignBGround};
         margin-top: ${vMarginTop};
         margin-bottom: ${vMarginBottom}
+       
         `
         )
       }
