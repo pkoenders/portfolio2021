@@ -121,30 +121,30 @@ const HeaderWrapper = styled.header`
       a {
         display: flex;
         align-items: center;
-        height: ${({ theme }) => theme.header.height};
-        padding: 0 ${({ theme }) => theme.padding['1/2']};
+        /* height: ${({ theme }) => theme.header.height}; */
+        height: 48px; */
+         width: 48px;
+        //padding: 0 ${({ theme }) => theme.padding['1/2']};
         svg {
           max-height: fit-content;
           height: ${({ theme }) => theme.padding.default};
           @media (max-width: ${({ theme }) => theme.screens.sm}) {
-            height: 24px;
+            height: 48px;
+            width: 48px;
           }
         }
         img {
-          max-height: fit-content;
-          // height: ${({ theme }) => theme.padding.default};
-          // height: 56px;
+         
           border-radius: 1000px;
-          // border: 1px #fff solid;
-          @media (max-width: ${({ theme }) => theme.screens.sm}) {
-            height: 24px;
-          }
+          display:flex;
+         
         }
       }
       @media (max-width: ${({ theme }) => theme.screens.sm}) {
         position: absolute;
         top: 0;
-        right: 0;
+        right: 16px;
+        
       }
 
       @media print {
@@ -154,7 +154,7 @@ const HeaderWrapper = styled.header`
 
       svg,
       img {
-        width: auto;
+        // width: auto;
       }
     }
 
@@ -181,7 +181,7 @@ const HeaderWrapper = styled.header`
         p,
         span,
         button {
-          font-size: 120%;
+          //font-size: 120%;
           font-weight: 400;
           color: ${({ theme }) => theme.colors.header.text.default};
           background-color: transparent;
@@ -341,7 +341,9 @@ const HeaderWrapper = styled.header`
 
           a,
           button {
-            font-size: 95%;
+            // font-size: 95%;
+            font-size: ${({ theme }) => theme.fontSize.lg};
+
             text-align: center;
             line-height: initial;
             height: ${({ theme }) => theme.header.height};

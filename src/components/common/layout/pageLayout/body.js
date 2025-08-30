@@ -8,12 +8,11 @@ const PageBody = styled.article`
   h1 {
     display: flex;
     width: 100%;
-     grid-gap: ${({ theme }) => theme.padding.default}; */
+    grid-gap: ${({ theme }) => theme.padding.default};
     padding: ${({ theme }) => theme.padding.default} 0;
     color: ${({ theme }) => theme.colors.page.default};
-     margin: ${({ theme }) => theme.margin.default} 0;
-         font-weight: ${({ theme }) => theme.fontWeight.semibold};
-
+    margin: ${({ theme }) => theme.margin.default} 0;
+    font-weight: ${({ theme }) => theme.fontWeight.semibold};
   }
 
   .url {
@@ -28,7 +27,7 @@ const PageBody = styled.article`
     hyphens: auto;
     border-bottom: 1px solid transparent;
     /* margin: ${({ theme }) => theme.margin['1/2']} 0; */
-     margin-bottom: ${({ theme }) => theme.margin['1/2']};
+    margin-bottom: ${({ theme }) => theme.margin['1/2']};
     vertical-align: middle;
     i {
       margin-top: ${({ theme }) => theme.margin['1/16']};
