@@ -139,7 +139,12 @@ class Layout extends React.Component {
               {children}
             </main>
           </div>
-          <Footer currentLang={currentLang} currentPrefix={currentPrefix} />
+          <Footer
+            currentLang={currentLang}
+            currentPrefix={currentPrefix}
+            changeTheme={this.changeTheme}
+            currTheme={isLightTheme}
+          />
         </LayoutWrapper>
       </ThemeProvider>
     )
