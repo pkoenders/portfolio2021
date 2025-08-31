@@ -3,22 +3,26 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Switcher = styled.button`
-  display: flex !important;
-  height: ${({ theme }) => theme.header.height};
+  display: flex;
+  //height: ${({ theme }) => theme.header.height};
   align-self: center;
   align-items: center;
-  margin: auto 0;
-  padding: ${({ theme }) => theme.padding['1/16']} 12px;
-  position: absolute;
-  right: 0;
-  top: 0;
+  text-align: center;
+  cursor: pointer;
+
+  margin: auto;
+  padding: ${({ theme }) => theme.padding['1/16']} 16px;
+  // position: absolute;
+  //right: 0;
+  //top: 0;
   border-radius: 999rem;
-  /* border: 1px solid ${({ theme }) => theme.colors.header[800]}; */
-  box-shadow: ${({ theme }) => theme.boxShadow.lg};
+  //background-color: ${({ theme }) => theme.colors.pageHold.default};
+  border: 1px solid ${({ theme }) => theme.colors.header[800]};
+  //box-shadow: ${({ theme }) => theme.boxShadow.lg};
 
   @media (max-width: ${({ theme }) => theme.screens.sm}) {
-    top: 60px;
-    right: ${({ theme }) => theme.padding['1/4']};
+    //  top: 60px;
+    //right: ${({ theme }) => theme.padding['1/4']};
   }
 
   span {
@@ -28,6 +32,7 @@ const Switcher = styled.button`
     flex-direction: row;
     align-items: center;
     transition: transform 0.4s ease-in;
+    //text-decoration: underline;
     span {
       margin-left: 6px;
       font-size: 22px;
@@ -42,7 +47,7 @@ const Switcher = styled.button`
 
 const ThemeSwitcher = ({ changeTheme, currTheme }) => {
   return (
-    <Switcher type="button" onClick={changeTheme}>
+    <Switcher className="themeSwitcher" type="button" onClick={changeTheme}>
       {currTheme ? (
         <span aria-label="Light mode" role="img">
           Light<span>🌞</span>

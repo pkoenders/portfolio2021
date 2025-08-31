@@ -76,7 +76,7 @@ const BtnWrapper = styled.span`
     color: #000000;
     background-color: ${({ theme }) => theme.colors.primary[400]};
     //border: 1px solid ${({ theme }) => theme.colors.primary[1200]};
-    border: 1px solid ${({ theme }) => theme.colors.primary[1200]};
+    border: 1px solid ${({ theme }) => theme.colors.primary[1400]};
     font-size: ${({ theme }) => theme.fontSize.lg};
 
     font-weight: ${({ theme }) => theme.fontWeight.semibold};

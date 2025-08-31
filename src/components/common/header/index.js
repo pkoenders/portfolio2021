@@ -11,7 +11,7 @@ import IconMaterial from '/src/components/common/icons/material'
 // Layout
 import ProfileImg from '/src/components/common/brand/profile-img'
 // import LocaleSwitcher from './localeSwitcher/'
-import ThemeSwitcher from '/src/components/common/header/themeSwitcher/'
+//import ThemeSwitcher from '/src/components/common/header/themeSwitcher/'
 
 // Styles
 import '/src/styles/hamburger.scss'
@@ -138,6 +138,7 @@ const HeaderWrapper = styled.header`
          
           border-radius: 1000px;
           display:flex;
+          border: 1px solid ${({ theme }) => theme.colors.pageHold[800]};
          
         }
       }
@@ -311,7 +312,7 @@ const HeaderWrapper = styled.header`
       justify-content: space-between;
 
       > button {
-        display: none;
+        //display: none;
       }
 
       > ul {
@@ -901,7 +902,7 @@ class Header extends Component {
           </a>
         </div>
 
-        <nav className="headerNav" aria-label="My Life My Voice">
+        <nav className="headerNav">
           <button
             className="l1 hamburger hamburger--squeeze"
             type="button"
@@ -1034,7 +1035,7 @@ class Header extends Component {
 
           {/* // Activate locale */}
           {/* <LocaleSwitcher currentLang={currentLang} currentPath={currentPath} /> */}
-          <ThemeSwitcher changeTheme={this.props.changeTheme} currTheme={this.props.currTheme} />
+          {/* <ThemeSwitcher changeTheme={this.props.changeTheme} currTheme={this.props.currTheme} /> */}
         </nav>
       </HeaderWrapper>
     )

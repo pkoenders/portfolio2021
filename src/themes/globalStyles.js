@@ -35,11 +35,14 @@ export const GlobalStyles = createGlobalStyle`
     text-rendering: optimizeLegibility;
     word-wrap: break-word;
     font-kerning: normal;
+    //background-color: ${({ theme }) => theme.colors.page.bground.default};
+
   }
 
   body {
     line-height: 1.75;
     letter-spacing: ${({ theme }) => theme.letterSpacing.normal};
+
   }  
 
   @media print {  
@@ -50,6 +53,7 @@ export const GlobalStyles = createGlobalStyle`
     html, body {
       width: 210mm;
       height: 297mm;
+
     }
 
     header {

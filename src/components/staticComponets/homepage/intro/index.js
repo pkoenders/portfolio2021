@@ -246,7 +246,7 @@ const Intro = () => {
       <div>
         <div className="professionalSummary">
           <p className="intro">
-            Kia ora, I'm Peter Koenders — a UX/UI Designer with over 20 years of experience creating
+            I'm Peter Koenders — a UX/UI Designer with over 20 years of experience creating
             accessible, user-centred digital services for government, corporate, and non-profit
             organisations.
           </p>

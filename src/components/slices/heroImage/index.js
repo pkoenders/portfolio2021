@@ -177,6 +177,7 @@ const HeroImage = styled.section.attrs({
           overflow-wrap: break-word;
           word-wrap: break-word;
           hyphens: auto;
+          font-weight: ${({ theme }) => theme.fontWeight.semibold};
         }
 
         p {
