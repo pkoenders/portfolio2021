@@ -246,40 +246,29 @@ const Intro = () => {
       <div>
         <div className="professionalSummary">
           <p className="intro">
-            I'm a UX/UI Designer with over 20 years experience designing accessible, user-centred
-            digital products for government, corporate, and non-profit organisations. My work
-            focuses on creating scalable design systems, embedding accessibility by design, and
-            delivering inclusive digital services that improve real outcomes for people.
+            Kia ora, I'm Peter Koenders — a UX/UI Designer with over 20 years of experience creating
+            accessible, user-centred digital services for government, corporate, and non-profit
+            organisations.
           </p>
 
           <p>
-            I specialise in simplifying complexity — whether that's making dense information easier
-            to navigate, standardising design systems across large organisations, or helping teams
-            collaborate more effectively in Figma. My approach combines evidence-based design,
-            accessibility standards, and close collaboration with stakeholders to deliver intuitive,
-            consistent, and meaningful experiences.
+            I focus on building scalable design systems, embedding accessibility by design, and
+            delivering inclusive digital experiences that make a meaningful difference for people.
           </p>
 
           <p>
-            This portfolio showcases selected projects where I’ve led or contributed to:
+            This portfolio highlights projects where I've:
             <ul>
               <li>
-                Developing design systems and reusable components to improve efficiency and quality
+                Developed design systems and reusable components that improve efficiency and quality
               </li>
+              <li>Redesigned websites and applications to enhance accessibility and usability</li>
+              <li>Introduced tools and practices that strengthen collaboration across teams</li>
               <li>
-                Redesigning websites and applications with a focus on accessibility and usability
-              </li>
-              <li>Introducing tools and practices that strengthen collaboration across teams</li>
-              <li>
-                Creating inclusive interfaces that reflect cultural identity and meet diverse access
-                needs
+                Created inclusive interfaces that reflect cultural identity and support diverse
+                access needs.
               </li>
             </ul>
-          </p>
-
-          <p>
-            Every project is guided by a belief that digital services should be accessible,
-            inclusive, and empowering for all users.
           </p>
         </div>
         {/* <article className="intro">
