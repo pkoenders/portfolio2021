@@ -65,29 +65,36 @@ const GalleryItem = ({ currentLang, itemData }) => {
             )}
             <aside className="galleryImgs">
               {mainImage && (
-                <Zoom zoomMargin={32}>
-                  <GatsbyImage
-                    image={mainImage}
-                    alt={
-                      galleryItem.main_image.alt
-                        ? galleryItem.main_image.alt
-                        : 'This image currently has no description'
-                    }
-                  />
-                </Zoom>
+                <>
+                  <Zoom zoomMargin={32}>
+                    <GatsbyImage
+                      image={mainImage}
+                      alt={
+                        galleryItem.main_image.alt
+                          ? galleryItem.main_image.alt
+                          : 'This image currently has no description'
+                      }
+                    />
+                  </Zoom>
+                </>
               )}
 
               {galleryImageRoll !== undefined &&
                 galleryImageRoll.items.map((item, index) => (
-                  <Zoom zoomMargin={32}>
-                    <GatsbyImage
-                      image={item.image.gatsbyImageData}
-                      alt={
-                        item.image.alt ? item.image.alt : 'This image currently has no description'
-                      }
-                      key={index}
-                    />
-                  </Zoom>
+                  <>
+                    <Zoom zoomMargin={32}>
+                      <GatsbyImage
+                        image={item.image.gatsbyImageData}
+                        alt={
+                          item.image.alt
+                            ? item.image.alt
+                            : 'This image currently has no description'
+                        }
+                        key={index}
+                      />
+                      {item.description1.text && <p>{item.description1.text}</p>}
+                    </Zoom>
+                  </>
                 ))}
             </aside>
           </div>

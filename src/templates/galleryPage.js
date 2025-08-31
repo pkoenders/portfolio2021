@@ -185,6 +185,9 @@ export const query = graphql`
                       }
                     )
                   }
+                  description1 {
+                    text
+                  }
                 }
                 slice_type
               }

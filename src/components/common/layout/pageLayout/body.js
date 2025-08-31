@@ -110,9 +110,13 @@ const PageBody = styled.article`
       flex-grow: 1;
       div {
         display: flex;
-        border: 1px solid ${({ theme }) => theme.colors.card[100]};
-        box-shadow: ${({ theme }) => theme.boxShadow.xl};
-        border-radius: ${({ theme }) => theme.borderRadius.default};
+        flex-direction: column;
+        grid-gap: ${({ theme }) => theme.padding['1/2']};
+        > div {
+          border: 1px solid ${({ theme }) => theme.colors.card[100]};
+          box-shadow: ${({ theme }) => theme.boxShadow.xl};
+          border-radius: ${({ theme }) => theme.borderRadius.default};
+        }
       }
     }
   }
