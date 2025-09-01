@@ -288,13 +288,11 @@ const GalleryList = ({ currentLang, pageIntro, dataList }) => {
           {/* Set the filter / list style */}
 
           <ListStyleWrapper>
-            <div>
-              <SearchTitle
-                filteredData={filteredData}
-                queryValue={queryValue}
-                queryLength={queryLength}
-              />
-            </div>
+            <SearchTitle
+              filteredData={filteredData}
+              queryValue={queryValue}
+              queryLength={queryLength}
+            />
 
             {allPosts.length > 0 && (
               <div>
